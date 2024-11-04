@@ -1,4 +1,6 @@
 import numpy as np
+from numpy import ndarray
+
 from Diffusion import diffusion_3d
 from Material import Shape
 from matplotlib import pyplot as plt
@@ -9,27 +11,27 @@ NOTES:
     dependant on the grid size.
 
 - Learn how to make the grids better. Implement 3D grid. Try to make the size of the grid vary based on how big the objects are.
-
-- Note: We assume there is no diffusion in the other directions of the fuel-rods, and all the neutrons are emmitted from one face. The surface is x, y, and the 
-    diffusion direction is in Z.
 """
 
-NUM_PARTICLES = 30
-BOX_LENGTH = 10
-DIFFUSION_CONST = 1.0
+NUM_PARTICLES: int = 30
+BOX_LENGTH: int = 10
+DIFFUSION_CONST: float = 1.0
 
-def set_boundary_conditions(boundary_array):
+def set_boundary_conditions(boundary_array: np.ndarray) -> np.ndarray:
     boundary_array[:, :, -1] = True
     return boundary_array
 
-def set_initial_conditions(init_array):
+def set_initial_conditions(init_array: np.ndarray) -> np.ndarray:
     init_array[:, :, -1] = +1.0
     return init_array
 
+
 def main():
     # Create Fuel Rod Objects
-    fuel_rod_1 = Shape(1, 1, 1, 'Cube', 235, 'Uranium', 92)
-    fuel_rod_2 = Shape(1, 1, 1, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_1 = Shape(10, 10, 10, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_2 = Shape(10, 10, 10, 'Cube', 235, 'Uranium', 92)
+
+    print(fuel_rod_1)
 
     # Set up initial conditions for both Fuel Rod Objects
     init_condition_1 = np.zeros((fuel_rod_1.length, fuel_rod_1.width, fuel_rod_1.height))
@@ -46,15 +48,14 @@ def main():
     set_initial_conditions(init_condition_2)
 
     # Initialize grid-spacing, timesteps, number of timesteps and the total time
-    grid_spacing = 1.0 / NUM_PARTICLES
+    grid_spacing: float = 1.0 / NUM_PARTICLES
     timestep = (grid_spacing ** 2 / 4 / DIFFUSION_CONST) * 0.25
     t_final = 0.25
     num_timesteps = int(t_final / timestep)
 
-    result = diffusion_3d(init_condition_1, boundary_1, DIFFUSION_CONST, grid_spacing, timestep, num_timesteps)
+    result: np.ndarray = diffusion_3d(init_condition_1, grid_spacing, timestep, num_timesteps, boundary_1, diffusion_const=DIFFUSION_CONST)
     
-    x, y, z, time = np.split(result)
-
+    x, y, z, time = np.split(result, indices_or_sections=4, axis=-1)
     print(result.shape)
 
 if __name__ == '__main__':
