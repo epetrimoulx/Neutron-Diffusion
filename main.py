@@ -12,7 +12,7 @@ NOTES:
 """
 
 NUM_PARTICLES = 30
-BOX_LENGTH = 1
+BOX_LENGTH = 10
 DIFFUSION_CONST = 1.0
 
 def set_boundary_conditions(boundary_array):
@@ -37,8 +37,8 @@ def set_initial_conditions(init_array):
 
 def main():
     # Create Fuel Rod Objects
-    fuel_rod_1 = Shape(0.1, 0.1, 0.1, 'Cube', 235, 'Uranium', 92)
-    fuel_rod_2 = Shape(0.1, 0.1, 0.1, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_1 = Shape(1, 1, 1, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_2 = Shape(1, 1, 1, 'Cube', 235, 'Uranium', 92)
 
     # Set up initial conditions for both Fuel Rod Objects
     init_condition_1 = np.zeros((fuel_rod_1.length, fuel_rod_1.width, fuel_rod_1.height))
@@ -61,8 +61,8 @@ def main():
     num_timesteps = int(t_final / timestep)
 
     result = diffusion_3d(init_condition_1, boundary_1, DIFFUSION_CONST, grid_spacing, timestep, num_timesteps)
-
-    plt.imshow(result)
+    
+    x, y, z, time = np.split(result)
 
     print(result.shape)
 
