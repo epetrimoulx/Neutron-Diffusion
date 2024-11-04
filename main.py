@@ -9,6 +9,9 @@ NOTES:
     dependant on the grid size.
 
 - Learn how to make the grids better. Implement 3D grid. Try to make the size of the grid vary based on how big the objects are.
+
+- Note: We assume there is no diffusion in the other directions of the fuel-rods, and all the neutrons are emmitted from one face. The surface is x, y, and the 
+    diffusion direction is in Z.
 """
 
 NUM_PARTICLES = 30
@@ -16,23 +19,11 @@ BOX_LENGTH = 10
 DIFFUSION_CONST = 1.0
 
 def set_boundary_conditions(boundary_array):
-    boundary_array[:, :, 0] = True
     boundary_array[:, :, -1] = True
-    boundary_array[:, 0, :] = True
-    boundary_array[:, -1, :] = True
-    boundary_array[0, :, :] = True
-    boundary_array[-1, :, :] = True
-
     return boundary_array
 
 def set_initial_conditions(init_array):
-    init_array[:, :,  0] = +1.0
-    init_array[:, :, -1] = -1.0
-    init_array[:, 0,  :] = +1.0
-    init_array[:, -1, :] = -1.0
-    init_array[0, :,  :] = +1.0
-    init_array[-1, :, :] = -1.0
-
+    init_array[:, :, -1] = +1.0
     return init_array
 
 def main():
