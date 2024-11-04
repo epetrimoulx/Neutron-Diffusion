@@ -40,9 +40,11 @@ def main():
     fuel_rod_1 = Shape(0.1, 0.1, 0.1, 'Cube', 235, 'Uranium', 92)
     fuel_rod_2 = Shape(0.1, 0.1, 0.1, 'Cube', 235, 'Uranium', 92)
 
+    # Set up initial conditions for both Fuel Rod Objects
     init_condition_1 = np.zeros((fuel_rod_1.length, fuel_rod_1.width, fuel_rod_1.height))
     init_condition_2 = np.zeros((BOX_LENGTH - fuel_rod_1.length, BOX_LENGTH + fuel_rod_1.width, BOX_LENGTH + fuel_rod_1.height))
 
+    # Set up boundary conditions for both Fuel Rod Objects
     boundary_1 = np.full((fuel_rod_1.length, fuel_rod_1.width, fuel_rod_1.height),False, dtype = bool)
     boundary_2 = np.full((BOX_LENGTH - fuel_rod_1.length, BOX_LENGTH + fuel_rod_1.width, BOX_LENGTH + fuel_rod_1.height), False, dtype=bool)
 
@@ -52,6 +54,7 @@ def main():
     set_initial_conditions(init_condition_1)
     set_initial_conditions(init_condition_2)
 
+    # Initialize grid-spacing, timesteps, number of timesteps and the total time
     grid_spacing = 1.0 / NUM_PARTICLES
     timestep = (grid_spacing ** 2 / 4 / DIFFUSION_CONST) * 0.25
     t_final = 0.25
