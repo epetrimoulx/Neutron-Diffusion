@@ -19,17 +19,29 @@ DIFFUSION_CONST: float = 1.0
 
 def set_boundary_conditions(boundary_array: np.ndarray) -> np.ndarray:
     boundary_array[:, :, -1] = True
+    boundary_array[:, :,  0] = True
+    boundary_array[:, -1, :] = True
+    boundary_array[:,  0, :] = True
+    boundary_array[-1, :, 0] = True
+    boundary_array[0 , :, :] = True
+    
     return boundary_array
 
-def set_initial_conditions(init_array: np.ndarray) -> np.ndarray:
-    init_array[:, :, -1] = +1.0
+def set_initial_conditions(init_array: np.ndarray, shape) -> np.ndarray:
+    init_array[:, :, -1] = shape.calc_num_neutrons() * shape.height
+    init_array[:, :,  0] = shape.calc_num_neutrons() * shape.height
+    init_array[:, -1, :] = shape.calc_num_neutrons() * shape.width
+    init_array[:,  0, :] = shape.calc_num_neutrons() * shape.width
+    init_array[-1, :, 0] = shape.calc_num_neutrons() * shape.length
+    init_array[0 , :, :] = shape.calc_num_neutrons() * shape.length
+    
     return init_array
 
 
 def main():
     # Create Fuel Rod Objects
-    fuel_rod_1 = Shape(2, 2, 2, 'Cube', 235, 'Uranium', 92)
-    fuel_rod_2 = Shape(2, 2, 2, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_1 = Shape(20, 20, 20, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_2 = Shape(20, 20, 20, 'Cube', 235, 'Uranium', 92)
 
     print(fuel_rod_1)
 
@@ -67,8 +79,8 @@ def main():
     set_boundary_conditions(boundary_1)
     set_boundary_conditions(boundary_2)
 
-    set_initial_conditions(init_condition_1)
-    set_initial_conditions(init_condition_2)
+    set_initial_conditions(init_condition_1, fuel_rod_1)
+    set_initial_conditions(init_condition_2, fuel_rod_2)
 
     # Initialize grid-spacing, timesteps, number of timesteps and the total time
     grid_spacing: float = 1.0 / NUM_PARTICLES
