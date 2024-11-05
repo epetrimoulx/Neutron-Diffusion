@@ -14,7 +14,7 @@ NOTES:
 """
 
 NUM_PARTICLES: int = 30
-BOX_LENGTH: int = 10
+BOX_LENGTH: int = 100
 DIFFUSION_CONST: float = 1.0
 
 def set_boundary_conditions(boundary_array: np.ndarray) -> np.ndarray:
@@ -28,18 +28,41 @@ def set_initial_conditions(init_array: np.ndarray) -> np.ndarray:
 
 def main():
     # Create Fuel Rod Objects
-    fuel_rod_1 = Shape(10, 10, 10, 'Cube', 235, 'Uranium', 92)
-    fuel_rod_2 = Shape(10, 10, 10, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_1 = Shape(2, 2, 2, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_2 = Shape(2, 2, 2, 'Cube', 235, 'Uranium', 92)
 
     print(fuel_rod_1)
 
     # Set up initial conditions for both Fuel Rod Objects
-    init_condition_1 = np.zeros((fuel_rod_1.length, fuel_rod_1.width, fuel_rod_1.height))
-    init_condition_2 = np.zeros((BOX_LENGTH - fuel_rod_1.length, BOX_LENGTH + fuel_rod_1.width, BOX_LENGTH + fuel_rod_1.height))
+    init_condition_1 = np.zeros((
+        fuel_rod_1.length,
+        fuel_rod_1.width,
+        fuel_rod_1.height
+    ))
+
+    init_condition_2 = np.zeros((
+        fuel_rod_2.length,
+        fuel_rod_2.width,
+        fuel_rod_2.height
+    ))
+
 
     # Set up boundary conditions for both Fuel Rod Objects
-    boundary_1 = np.full((fuel_rod_1.length, fuel_rod_1.width, fuel_rod_1.height),False, dtype = bool)
-    boundary_2 = np.full((BOX_LENGTH - fuel_rod_1.length, BOX_LENGTH + fuel_rod_1.width, BOX_LENGTH + fuel_rod_1.height), False, dtype=bool)
+    boundary_1 = np.full(
+        (
+        fuel_rod_1.length,
+        fuel_rod_1.width,
+        fuel_rod_1.height
+        ),False, dtype = bool
+    )
+
+    boundary_2 = np.full(
+        (
+            BOX_LENGTH - fuel_rod_2.length,
+            BOX_LENGTH - fuel_rod_2.width,
+            BOX_LENGTH - fuel_rod_2.height
+        ), False, dtype=bool
+    )
 
     set_boundary_conditions(boundary_1)
     set_boundary_conditions(boundary_2)
