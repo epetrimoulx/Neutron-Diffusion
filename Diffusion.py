@@ -20,8 +20,9 @@ def diffusion_3d(
         num_timesteps: int,
         boundary: np.ndarray,
         dirichlet_values: np.ndarray = None,
-        diffusion_const: float = 2.34e5,
-        reaction_rate: float = 1.896e8
+        boundary_type: str = 'neumann',
+        diffusion_const: float = 1.1, #2.34e5,
+        reaction_rate: float = 1.2 #1.896e8
 ) -> np.ndarray:
     """
     Simulates the 3D diffusion-reaction process over a grid with Dirichlet or Neumann boundary conditions.
@@ -45,6 +46,8 @@ def diffusion_3d(
     :param dirichlet_values: Fixed concentration values at boundary points (for Dirichlet conditions).
                              If `None`, Neumann (no-flux) conditions are applied.
     :type dirichlet_values: numpy.ndarray, optional
+    :param boundary_type: Type of boundary conditions.
+    :type boundary_type: str
     :param diffusion_const: Diffusion constant `D`. Default is 2.34e5.
     :type diffusion_const: float, optional
     :param reaction_rate: Reaction rate constant `η`. Default is 1.896e8.
@@ -99,10 +102,45 @@ def diffusion_3d(
                                 reaction_rate * ϕ[ix, iy, iz, it - 1] * timestep)
                     else:
                         # Neumann Boundary Conditions
-                        if dirichlet_values is None:
+                        if boundary_type == 'neumann':
                             ϕ[ix, iy, iz, it] = ϕ[ix, iy, iz, it - 1]
 
                         # Dirichlet Boundary Conditions
-                        else:
+                        elif boundary_type == 'dirichlet' and dirichlet_values is not None:
                             ϕ[ix, iy, iz, it] = dirichlet_values[ix, iy, iz]
+
+                        else:
+                            # Robin Boundary Conditions Here
+                            ϕ[ix, iy, iz, it] = ϕ[ix, iy, iz, it - 1]
     return ϕ
+
+
+def smash_fuel_rods_together(fuel_rod_1, fuel_rod_2, timestep: float, compression_speed: float) -> None:
+    distance = fuel_rod_2.x_center - fuel_rod_1.x_center
+
+    # Make sure the fuel rods are not inside eachother // overlapping
+    if distance > 0:
+        move_distance = min(compression_speed * timestep, distance)
+        fuel_rod_1.x_center += move_distance
+        fuel_rod_2.x_center -= move_distance
+    else:
+        print('Rods have collided')
+
+    # return fuel_rod_1, fuel_rod_2
+
+
+def update_neutron_density(init_condition_1, init_condition_2, fuel_rod_1, fuel_rod_2, time_step):
+    # As the rods get closer, increase neutron density in the interacting region
+    interaction_radius = 5  # Define an interaction radius that grows as rods compress
+
+    # Find the region where the rods overlap or are close to each other
+    distance_between_rods = abs(fuel_rod_2.x_center - fuel_rod_1.x_center)
+
+    if distance_between_rods < interaction_radius:
+        # Increase neutron density in the interaction zone
+        init_condition_1[:, :,
+        int(fuel_rod_1.x_center - interaction_radius):int(fuel_rod_1.x_center + interaction_radius)] += 0.1
+        init_condition_2[:, :,
+        int(fuel_rod_2.x_center - interaction_radius):int(fuel_rod_2.x_center + interaction_radius)] += 0.1
+
+    return init_condition_1, init_condition_2
