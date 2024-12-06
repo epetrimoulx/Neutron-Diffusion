@@ -3,8 +3,8 @@ File to deal with the Diffusion Equation
 
 The diffusion constant is equal to µ = λ_t v_neut/3, where λt represents neutron transport free
 path, and v_neut represents neutron speed. The neutron rate of formation constant is
-equal to η = v_neut(ν − 1)/λf , where ν represents secondary neutrons created by fission
-(the −1 accounts for the neutron causing fission being consumed in the reaction), and
+equal to η = v_neut(v - 1)/λf , where v represents secondary neutrons created by fission
+(the -1 accounts for the neutron causing fission being consumed in the reaction), and
 λf represents neutron fission free path. Using U235 values from Table (7) we obtain:
 µ = 2.345E+05 (m2/s) and η = 1.896E+08 (1/s).
 """

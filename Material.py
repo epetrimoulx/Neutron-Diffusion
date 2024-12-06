@@ -23,5 +23,3 @@ class Shape:
 
     def calc_num_neutrons(self):
         return self.mass - self.element_num
-
-
