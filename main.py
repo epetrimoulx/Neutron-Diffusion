@@ -1,33 +1,17 @@
-import numpy as np
+from matplotlib.animation import FuncAnimation
 
-from Diffusion import diffusion_3d
+from Diffusion import *
 from Graphing import *
 from Material import Shape
-from Integrate import rk4
 
-"""
-NOTES:
-- The Grid mesh we have made in class creates boundary conditions relative to the grid size. The length, width, and height of the objects needs to be 
-    dependant on the grid size.
-
-- Learn how to make the grids better. Implement 3D grid. Try to make the size of the grid vary based on how big the objects are.
-"""
-
-BOX_LENGTH: int = 10
+BOX_LENGTH: int = 40
 DIFFUSION_CONST: float = 0.1
+INITIAL_CONDITION: float = 1.0
+COLLISION_SPEED: float = 0.1 # How fast the fuel rods are being hit together
 
-def set_boundary_conditions(boundary_array: np.ndarray) -> np.ndarray:
-    boundary_array[:, :, -1] = True
-    boundary_array[:, :,  0] = True
-    
-    return boundary_array
+def set_initial_conditions(init_array: np.ndarray) -> np.ndarray:
+    init_array.fill(INITIAL_CONDITION)
 
-def set_initial_conditions(init_array: np.ndarray, shape) -> np.ndarray:
-    # init_array[:, :, -1] = 0.001 #shape.calc_num_neutrons() * shape.height
-    # init_array[:, :,  0] = 0.001 #shape.calc_num_neutrons() * shape.height
-
-    init_array.fill(0.01)
-    
     return init_array
 
 def growth_rate(total_density: np.ndarray) -> np.ndarray:
@@ -35,7 +19,6 @@ def growth_rate(total_density: np.ndarray) -> np.ndarray:
     Determines the growth rate of neutrons in the diffusion process. If the Neutron Multiplication factor (k) is
         equal to 1, The reaction is critical. If k is less than 1 the reaction is Sub-critical, and if k is greater than 1 the
         reaction is Supercritical
-
 
     :param total_density:
     :type: np.ndarray
@@ -58,13 +41,48 @@ def determine_k(k) -> None:
     else:
         print(f'The reaction is sub-critical!')
 
+def place_fuel_rods_in_grid(grid, boundary_grid, rod, position='left'):
+    """
+    Add the neutron density of a rod into the simulation grid based on its position
+    :param grid: The simulation grid
+    :param boundary_grid: The boundary grid
+    :param rod: The rod
+    :param position: The starting position of the rod
+    :return: Grid values with the rods inside as well as a matching boundary condition grid
+    """
+
+    if position == 'left':
+        # Place the rod on the left side of the grid
+        x_start = 0
+        x_end = min(grid.shape[0], int(rod.length))  # Limit x_end to the grid size
+    elif position == 'right':
+        # Place the rod on the right side of the grid
+        x_start = max(0, grid.shape[0] - int(rod.length))  # Start from the far right
+        x_end = grid.shape[0]
+    else:
+        print(f'Position {position} is not valid. Placing object in the center\n')
+        x_start = max(0, int(rod.x_center - rod.length // 2))
+        x_end = min(grid.shape[1], int(rod.x_center + rod.length // 2))
+
+    # Rods should start at the same height (Head on collisions only for now)
+    y_start = max(0, int(rod.y_center - rod.length // 2))
+    y_end = min(grid.shape[1], int(rod.y_center + rod.length // 2))
+    z_start = max(0, int(rod.z_center - rod.length // 2))
+    z_end = min(grid.shape[2], int(rod.z_center + rod.length // 2))
+
+    grid[x_start:x_end, y_start:y_end, z_start:z_end] += INITIAL_CONDITION
+    boundary_grid[x_start:x_end, y_start:y_end, z_start:z_end] = True
+
+    return grid, boundary_grid
+
 
 def main():
     # Create Fuel Rod Objects
-    fuel_rod_1 = Shape(40, 40, 40, 'Cube', 235, 'Uranium', 92)
-    fuel_rod_2 = Shape(40, 40, 40, 'Cube', 235, 'Uranium', 92)
+    fuel_rod_1 = Shape(4, 4, 4, 'Cube', 235, 'Uranium', 92, (5, BOX_LENGTH // 2, BOX_LENGTH // 2))
+    fuel_rod_2 = Shape(4, 4, 4, 'Cube', 235, 'Uranium', 92, (35, BOX_LENGTH // 2, BOX_LENGTH // 2))
 
-    print(fuel_rod_1)
+    print(f'{fuel_rod_1} \n')
+    print(f'{fuel_rod_2} \n')
 
     # Set up initial conditions for both Fuel Rod Objects
     init_condition_1 = np.zeros((
@@ -79,59 +97,66 @@ def main():
         fuel_rod_2.height
     ))
 
+    set_initial_conditions(init_condition_1)
+    set_initial_conditions(init_condition_2)
 
-    # Set up boundary conditions for both Fuel Rod Objects
-    boundary_1 = np.full(
-        (
-        fuel_rod_1.length,
-        fuel_rod_1.width,
-        fuel_rod_1.height
-        ),False, dtype = bool
-    )
+    # Initialize grid-spacing, timesteps, number of timesteps, total time, and density
+    grid_spacing: float       = 1e4 / (BOX_LENGTH**3) # 1e4 added for memory management
+    timestep_size: float      = (grid_spacing ** 2 / 4 / DIFFUSION_CONST) * 0.25
+    t_final: int              = 10
+    num_timesteps: int        = int(t_final / timestep_size)
+    total_density: np.ndarray = np.zeros(num_timesteps)
+    result: np.ndarray        = np.zeros((num_timesteps, BOX_LENGTH, BOX_LENGTH, BOX_LENGTH))
+    time: np.ndarray          = np.linspace(0, t_final, num_timesteps)
 
-    # boundary_2 = np.full(
-    #     (
-    #         BOX_LENGTH - fuel_rod_2.length,
-    #         BOX_LENGTH - fuel_rod_2.width,
-    #         BOX_LENGTH - fuel_rod_2.height
-    #     ), False, dtype=bool
-    # )
+    # At the start of the simulation, the rods are far apart and havent yet collided
+    has_collided: bool = False
 
-    set_boundary_conditions(boundary_1)
-    # set_boundary_conditions(boundary_2)
+    # Create Grid
+    grid = np.zeros((BOX_LENGTH, BOX_LENGTH, BOX_LENGTH))
+    boundary_grid = np.full((BOX_LENGTH, BOX_LENGTH, BOX_LENGTH), False)
 
-    set_initial_conditions(init_condition_1, fuel_rod_1)
-    # set_initial_conditions(init_condition_2, fuel_rod_2)
+    # Embed fuel rods into the grid
+    grid, boundary_grid = place_fuel_rods_in_grid(grid, boundary_grid, fuel_rod_1, position='left')
+    grid, boundary_grid = place_fuel_rods_in_grid(grid, boundary_grid, fuel_rod_2, position='right')
 
-    # Initialize grid-spacing, timesteps, number of timesteps and the total time
-    grid_spacing: float = 1e4 / (fuel_rod_1.length * fuel_rod_1.width * fuel_rod_1.height) # 1e4 added for memory management
-    timestep = (grid_spacing ** 2 / 4 / DIFFUSION_CONST) * 0.25
-    t_final = 10
-    num_timesteps = int(t_final / timestep)
 
-    result: np.ndarray = diffusion_3d(init_condition_1, grid_spacing, timestep, num_timesteps, boundary_1, diffusion_const=DIFFUSION_CONST)
+    # Info for first step in diffusion process
+    nx, ny, nz = grid.shape
+    diffusion: np.ndarray = np.zeros((nx, ny, nz, num_timesteps), dtype=np.float64)
+    d = DIFFUSION_CONST * timestep_size / grid_spacing ** 3
+    diffusion[:, :, :, 0] = np.copy(grid)
+    total_density[0] = np.sum(diffusion[:, :, :, 0])
 
-    # Check for nan's
-    if np.isnan(result).any():
-        print(f'The reaction went super critical and an overflow occurred. Stopping the simulation.')
-        exit()
+    for timestep in range(1, num_timesteps):
 
-    # Sum over x, y, z axis to get the density at different time steps
-    total_density = np.sum(result, axis = (0, 1, 2))
-    print(total_density[1], total_density[-1])
-    time = np.linspace(0, t_final, num_timesteps)
+        # Move the rods closer together
+        if (not has_collided) and ((timestep * COLLISION_SPEED) - round(timestep * COLLISION_SPEED) < 1e-9):
+            boundary_grid, has_collided = smash_fuel_rods_together(boundary_grid, has_collided)
+            plot_fuel_rod_positions(boundary_grid)
 
-    plot_neutron_density(total_density, time)
+        # Diffuse
+        diffusion = diffusion_3d(nx, ny, nz, diffusion, d, timestep_size, timestep, boundary_grid)
+        total_density[timestep] = np.sum(diffusion[:, :, :, timestep])
 
+        # Check for nan's
+        if np.isnan(result).any():
+            print(f'The reaction went super critical and an overflow occurred. Stopping the simulation.')
+            exit()
+
+    result = diffusion
+
+    plot_neutron_density_evolution(result, time)
     k = growth_rate(total_density)
+
+    for i in range(len(total_density) - 1):
+        determine_k(k[i])
 
     plot_k_vs_time(k, time[:-1])
 
-    plt.imshow(result[:, 25, :, 540], cmap='coolwarm', origin='lower')
+    plt.imshow(np.transpose(result[:, -1//2, :, -1//2]), cmap='coolwarm', origin='lower')
     plt.colorbar(fraction=0.02)
     plt.show()
-
-
 
 
 if __name__ == '__main__':

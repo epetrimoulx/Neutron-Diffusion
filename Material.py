@@ -1,10 +1,12 @@
+import numpy as np
+
 class Shape:
     """
     Note: the length, width, and height members are described in terms of # of Uranium atoms
 
     Ex. length = 5 means 5 Uranium atoms in length
     """
-    def __init__(self, length: int, width: int, height: int, name: str, mass: int, element_name: str, element_num: int):
+    def __init__(self, length: int, width: int, height: int, name: str, mass: int, element_name: str, element_num: int, start_position: np.ndarray[float]):
         self.name: str = name
         self.length: int = length
         self.width: int = width
@@ -12,6 +14,9 @@ class Shape:
         self.mass: int = mass
         self.element: str = element_name
         self.element_num: int = element_num
+        self.x_center: float = start_position[0]
+        self.y_center: float = start_position[1]
+        self.z_center: float = start_position[2]
 
     def __str__(self):
         return (f'Element: {self.element}-{self.mass}\n'
@@ -23,3 +28,6 @@ class Shape:
 
     def calc_num_neutrons(self):
         return self.mass - self.element_num
+
+
+
