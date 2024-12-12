@@ -1,10 +1,8 @@
-from matplotlib.animation import FuncAnimation
-
-from Diffusion import *
-from Graphing import *
+from Moving.Diffusion import *
+from Moving.Graphing import *
 from Material import Shape
 
-BOX_LENGTH: int = 40
+BOX_LENGTH: int = 30
 DIFFUSION_CONST: float = 0.1
 INITIAL_CONDITION: float = 1.0
 COLLISION_SPEED: float = 0.1 # How fast the fuel rods are being hit together
@@ -78,8 +76,8 @@ def place_fuel_rods_in_grid(grid, boundary_grid, rod, position='left'):
 
 def main():
     # Create Fuel Rod Objects
-    fuel_rod_1 = Shape(4, 4, 4, 'Cube', 235, 'Uranium', 92, (5, BOX_LENGTH // 2, BOX_LENGTH // 2))
-    fuel_rod_2 = Shape(4, 4, 4, 'Cube', 235, 'Uranium', 92, (35, BOX_LENGTH // 2, BOX_LENGTH // 2))
+    fuel_rod_1 = Shape(4, 4, 4, 'Cube', 235, 'Uranium', 92, (15, BOX_LENGTH // 2, BOX_LENGTH // 2))
+    fuel_rod_2 = Shape(4, 4, 4, 'Cube', 235, 'Uranium', 92, (25, BOX_LENGTH // 2, BOX_LENGTH // 2))
 
     print(f'{fuel_rod_1} \n')
     print(f'{fuel_rod_2} \n')
@@ -101,7 +99,7 @@ def main():
     set_initial_conditions(init_condition_2)
 
     # Initialize grid-spacing, timesteps, number of timesteps, total time, and density
-    grid_spacing: float       = 1e4 / (BOX_LENGTH**3) # 1e4 added for memory management
+    grid_spacing: float       = 1e2 / (BOX_LENGTH**2) # 1e2 added for memory management
     timestep_size: float      = (grid_spacing ** 2 / 4 / DIFFUSION_CONST) * 0.25
     t_final: int              = 10
     num_timesteps: int        = int(t_final / timestep_size)
@@ -120,6 +118,23 @@ def main():
     grid, boundary_grid = place_fuel_rods_in_grid(grid, boundary_grid, fuel_rod_1, position='left')
     grid, boundary_grid = place_fuel_rods_in_grid(grid, boundary_grid, fuel_rod_2, position='right')
 
+    # Create velocity array
+    velocity_grid = np.zeros((BOX_LENGTH, BOX_LENGTH, BOX_LENGTH, 3))
+    velocity_grid.fill(1.0e-5)
+
+    # The fuel rods are located where the boundary_grid is true. At these locations, give the fuel rods a velocity
+    #   # Left Box
+    for x in range(0, BOX_LENGTH // 2):
+        for y in range(BOX_LENGTH):
+            for z in range(BOX_LENGTH):
+                if boundary_grid[x, y, z]:
+                    velocity_grid[x, y, z] = -1.0e5
+    #   # Right Box
+    for x in range(BOX_LENGTH // 2, BOX_LENGTH):
+        for y in range(BOX_LENGTH):
+            for z in range(BOX_LENGTH):
+                if boundary_grid[x, y, z]:
+                    velocity_grid[x, y, z] = +1.0e5
 
     # Info for first step in diffusion process
     nx, ny, nz = grid.shape
@@ -131,12 +146,13 @@ def main():
     for timestep in range(1, num_timesteps):
 
         # Move the rods closer together
-        if (not has_collided) and ((timestep * COLLISION_SPEED) - round(timestep * COLLISION_SPEED) < 1e-9):
-            boundary_grid, has_collided = smash_fuel_rods_together(boundary_grid, has_collided)
-            plot_fuel_rod_positions(boundary_grid)
+        # if not has_collided:
+            # boundary_grid, has_collided = smash_fuel_rods_together(boundary_grid, has_collided)
+            # boundary_grid, has_collided = smash_fuel_rods_together_TEST(boundary_grid, has_collided, velocity_grid, grid_spacing, timestep_size)
+            # plot_fuel_rod_positions(boundary_grid)
 
         # Diffuse
-        diffusion = diffusion_3d(nx, ny, nz, diffusion, d, timestep_size, timestep, boundary_grid)
+        diffusion = diffusion_3d(nx, ny, nz, diffusion, d, timestep_size, timestep, boundary_grid, velocity_grid, grid_spacing)
         total_density[timestep] = np.sum(diffusion[:, :, :, timestep])
 
         # Check for nan's
