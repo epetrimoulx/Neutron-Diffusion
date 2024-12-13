@@ -1,9 +1,9 @@
-from Moving.Diffusion import *
-from Moving.Graphing import *
+from Diffusion import *
+from Graphing import *
 from Material import Shape
 
 BOX_LENGTH: int = 30
-DIFFUSION_CONST: float = 0.1
+DIFFUSION_CONST: float = 2.34e5
 INITIAL_CONDITION: float = 1.0
 COLLISION_SPEED: float = 0.1 # How fast the fuel rods are being hit together
 
@@ -101,7 +101,7 @@ def main():
     # Initialize grid-spacing, timesteps, number of timesteps, total time, and density
     grid_spacing: float       = 1e2 / (BOX_LENGTH**2) # 1e2 added for memory management
     timestep_size: float      = (grid_spacing ** 2 / 4 / DIFFUSION_CONST) * 0.25
-    t_final: int              = 10
+    t_final: int              = 1e-8
     num_timesteps: int        = int(t_final / timestep_size)
     total_density: np.ndarray = np.zeros(num_timesteps)
     result: np.ndarray        = np.zeros((num_timesteps, BOX_LENGTH, BOX_LENGTH, BOX_LENGTH))
