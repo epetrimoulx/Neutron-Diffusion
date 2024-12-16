@@ -1,0 +1,86 @@
+\documentclass[letterpaper, 12pt]{article}
+\usepackage{geometry}
+\usepackage{titling}
+\usepackage{titlesec}
+\usepackage{pgfplots}
+\usepackage{tkz-euclide}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bbold}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{titling}
+\usepackage{fancyhdr}
+\usepackage{bookmark}
+\usepackage{fancyhdr}
+\usepackage{tikz-cd}
+\usepackage[most]{tcolorbox} 
+\usepackage[rightcaption]{sidecap}
+\usepackage[shortlabels]{enumitem}
+
+\geometry{margin=0.75in,top=1in}
+
+\begin{document}
+    \begin{center}
+        {\Large Simulating an Atomic Bomb - An Exercise in Neutron Diffusion\\}
+        \vspace{0.5em}
+        Evan Petrimoulx \\
+    \end{center}
+
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[R]{\today}
+    \fancyhead[L]{Phys-3600 Computational Physics}
+    \fancyfoot[R]{}
+    \setlength{\droptitle}{-6em}
+
+    \tableofcontents
+    \newpage
+
+    \section*{Background}
+         Diffusion is a process in which something moves from an area of high density to an area of lower density. It can be described in physical systems by \textit{Fick's equation} \cite{Nuclear_Power_2021}.
+
+         \begin{align*}
+            J = -D \frac{\partial n}{\partial x}
+         \end{align*}
+
+         \noindent Where $D$ is the diffusion coefficient, $J$ is the diffusion flux (The amount of material moving away from the region of higher concentration per unit area per unit time). $n$ is the concentration of the material and $x$ is its position. This project will involve the study of diffusion in neutrons, particularly in its use inside of nuclear reactor cores and atomic weapons to produce high energy output. The study of neutron diffusion was a key point of interest at Los Alamos during the Manhatten Project during the second world war \cite{Griffiths_2020}. In this project I will study different configurations for stable neutron diffusion and chain reaction neutron diffusion in fissile materials in order to determine maximum energy output.
+    \section*{Key Questions}
+         \begin{enumerate}
+            \item How do the different types of boundary condition approximations affect the energy output of the system? (Dirichlet Boundary Condition vs Neumann Boundary Condition)
+            \item What is the critical mass of a fissile material? In other words at what point in these reactions does the process grow exponentially?
+            \item How does the choice of material change the energy output of the diffusion? Which materials are the best?
+            \item What is the minimum size the material such that neutron diffusion is still possible \cite{Serber_Rhodes_2020}?
+            \item How does the shape of the fuel rods impact the output of energy?
+         \end{enumerate}
+    \section*{Objectives}
+         \begin{enumerate}
+            \item Understand the theory of diffusion in atomic systems and how it can be used to produce energy.
+            \item Write code to simulate the neutron diffusion process for different boundary conditions on the materials being used. I will start with a simple cube and then move to more complicated shapes.
+            \item Determine which materials are most optimal for the diffusion process
+            \item Determine what the maximum quantity for optimal energy output is for different fissile materials. More specifically finding the exact point when the process becomes exponential.
+            \item Determine the minimum quantity for a positive energy output in different fissile materials.
+            \item Relate these results to that of current nuclear power plants to compare.
+            \item Test different boundary conditions and thier energy output to the energy output of other power producing methods.
+         \end{enumerate}
+         
+    \section*{Methods and Benchmarks}
+         \begin{enumerate}
+            \item Implement Fick's Equation with Neumann Boundary Conditions using the Crank - Nicolson method for stable solutions
+            \item Implement Fick's Equation with Dirchlet Boundary Conditions using the Crank - Nicolson method for stable solutions
+            \item Use a mixture of methods developed in class such as RK4, Verlet Integration, ODE solvers, and PDE solvers to model the ideal shape and material for a high energy output via neutron diffusion. I will mainly focus on the Crank - Nicolson methods for stable PDE solutions.
+            \item Benchmark the solution via simulating analytic solutions for simple shapes such as a sphere or cyclinder. Compare these results to that of our numerically solved shape.
+            \item Benchmark the solution by comparing to the energy output of the Demon Core.
+         \end{enumerate}
+
+    \pagenumbering{arabic}
+    \vspace{-0.5cm}
+    \bibliographystyle{ieeetr}
+    \bibliography{proposal-citations}
+\end{document}
