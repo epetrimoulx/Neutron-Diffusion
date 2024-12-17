@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex build/Neutron_Diffusion_Stationary"] 1734397079 "build/Neutron_Diffusion_Stationary.aux" "build/Neutron_Diffusion_Stationary.bbl" "build/Neutron_Diffusion_Stationary" 1734397083 0
-  "./report-citations.bib" 1734397071 2423 28584c8bc0bce008ad5f0b11fb11426f ""
+["bibtex build/Neutron_Diffusion_Stationary"] 1734415721 "build/Neutron_Diffusion_Stationary.aux" "build/Neutron_Diffusion_Stationary.bbl" "build/Neutron_Diffusion_Stationary" 1734415724 0
+  "./report-citations.bib" 1734413332 4062 c2ef13308181496b90c43c7ce061ce26 ""
   "C:/Users/epetr/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/ieeetr.bst" 1291864344 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
-  "build/Neutron_Diffusion_Stationary.aux" 1734397082 12016 2e2ad76661eb1cc2cdb913c9303026fe "pdflatex"
+  "build/Neutron_Diffusion_Stationary.aux" 1734415723 13839 6a34e6cb3b1b928e8e875689bbe8709a "pdflatex"
   (generated)
   "build/Neutron_Diffusion_Stationary.bbl"
   "build/Neutron_Diffusion_Stationary.blg"
   (rewritten before read)
-["pdflatex"] 1734397080 "e:/GitHub/Neutron-Diffusion/Stationary/Neutron_Diffusion_Stationary.tex" "build/Neutron_Diffusion_Stationary.pdf" "Neutron_Diffusion_Stationary" 1734397083 0
+["pdflatex"] 1734415721 "e:/GitHub/Neutron-Diffusion/Stationary/Neutron_Diffusion_Stationary.tex" "build/Neutron_Diffusion_Stationary.pdf" "Neutron_Diffusion_Stationary" 1734415724 0
   "C:/Users/epetr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1734310776 123019 4e6d54fe28a67ad1b512b0cc9d03c2e8 ""
   "C:/Users/epetr/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1670986981 10805037 493626d2a5942239bf11f38081aa88a1 ""
   "C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1233951848 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -322,6 +322,7 @@
   "C:/Users/epetr/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/epetr/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/epetr/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
+  "Graphs/Americium-Graph.png" 1734413557 36603 9579782abcf9adf8d173ac46ec7f4a7e ""
   "Graphs/Criticality-Test-Pu-239-31m.png" 1734395283 27490 782bdad9ed89949a3dc753e2fadb2637 ""
   "Graphs/Criticality-Test-Pu-239-36m.png" 1734395312 27259 69d86b68e5b2f50c42431d85027dc47b ""
   "Graphs/Criticality-Test-U235-25m.png" 1734392151 28281 5ab14dc63f68584ef2636e69cdcb4d5d ""
@@ -336,6 +337,7 @@
   "Graphs/NeumannCubes_Density_Vs_Time_Close.png" 1734388115 24045 d7076c11614ce2b6289822d67b05898d ""
   "Graphs/NeumannCubes_Density_Vs_Time_Far.png" 1734388060 25530 e87cca1ec4de8a77c10b59e1b6521cda ""
   "Graphs/NeumannCubes_Density_Vs_Time_Middle.png" 1734388186 23377 5c4e8adeaa38372fa06388a60586ace7 ""
+  "Graphs/Small-Simulation.png" 1734414050 58539 0dfcdc83abc445afd625c011b5297d72 ""
   "Images/Dirichlet-10m-Image.png" 1734390646 48406 4dffc473ca00524d4edb22866134f39f ""
   "Images/Dirichlet-20m-Image.png" 1734390580 86656 b1bdf331452d847d60dc0b11d01c8aaf ""
   "Images/Dirichlet-25m-Image.png" 1734390535 136308 9019cf7d1d4352904d0b67cefec0a97e ""
@@ -343,14 +345,18 @@
   "Images/Neumann-20m-Image.png" 1734390418 86956 62c43df01ea404cbcab7ea3f8792126b ""
   "Images/Neumann-25m-Image.png" 1734390373 133118 8452e19d06e939580a91c7cee0b43204 ""
   "Images/Nuclear_Power_Plant.jpg" 1734382711 874285 a2eb8858615aa8613462f3ae2f84978d ""
+  "Images/Small-Source-1.png" 1734414161 26198 ef500d42092f4bd7341bca2fe62a9659 ""
+  "Images/Small-Source-2.png" 1734414185 46681 ffaee34bb299ef1da165ff81b31bbe94 ""
+  "Images/Small-Source-3.png" 1734414247 51730 267b0c3c2340e0bf9d5eaf45880bfac7 ""
+  "Images/Small-Source-4.png" 1734414274 41855 f8a8e9631f7e3f88520f0c9dcfc507ce ""
   "Images/Trinity_Bomb.jpg" 1734381971 18399 188a2cf87cfb6ea53ea2178e43f9e1e5 ""
   "Images/Trinity_Test.jpg" 1734381408 6069 43c782e12b6c4bb7a7120a63ac0cad53 ""
   "Images/Trinity_Tower.jpg" 1734382139 160573 dc895d57680f67992366f34da32477c1 ""
-  "Neutron_Diffusion_Stationary.tex" 1734396683 27112 74ef83ed6b3bf4fd63d3169f7b3cc674 ""
-  "build/Neutron_Diffusion_Stationary.aux" 1734397082 12016 2e2ad76661eb1cc2cdb913c9303026fe "pdflatex"
-  "build/Neutron_Diffusion_Stationary.bbl" 1734397080 339 f100f4bf1f8d8e91625ac27716dfc916 "bibtex build/Neutron_Diffusion_Stationary"
-  "build/Neutron_Diffusion_Stationary.toc" 1734397082 1488 3861fa7b9e1e98dd74c5b61ee54d65a8 "pdflatex"
-  "e:/GitHub/Neutron-Diffusion/Stationary/Neutron_Diffusion_Stationary.tex" 1734396683 27112 74ef83ed6b3bf4fd63d3169f7b3cc674 ""
+  "Neutron_Diffusion_Stationary.tex" 1734415716 34476 00e11a83e1eefb6640f25b32c2043a09 ""
+  "build/Neutron_Diffusion_Stationary.aux" 1734415723 13839 6a34e6cb3b1b928e8e875689bbe8709a "pdflatex"
+  "build/Neutron_Diffusion_Stationary.bbl" 1734415721 956 291d68cf90eb91795802b358e95428a6 "bibtex build/Neutron_Diffusion_Stationary"
+  "build/Neutron_Diffusion_Stationary.toc" 1734415723 1491 47a166ab5783524ab9979fc98f260261 "pdflatex"
+  "e:/GitHub/Neutron-Diffusion/Stationary/Neutron_Diffusion_Stationary.tex" 1734415716 34476 00e11a83e1eefb6640f25b32c2043a09 ""
   (generated)
   "build/Neutron_Diffusion_Stationary.aux"
   "build/Neutron_Diffusion_Stationary.log"

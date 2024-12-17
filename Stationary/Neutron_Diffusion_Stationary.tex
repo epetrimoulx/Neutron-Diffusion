@@ -29,6 +29,8 @@
 \renewcommand{\thesection}{\Roman{section}.}
 \renewcommand{\thesubsection}{\null \quad \Alph{subsection}.}
 
+\newcommand{\eqlabel}[1]{\label{eq:#1}}
+
 % \hypersetup{hidelinks}
 \geometry{margin=0.75in,top=1in}
 \pgfplotsset{compat=1.18}
@@ -147,7 +149,71 @@
       \end{figure}
 
       \subsection{Choosing a material}
+         Since neutron-reactions are of key interest for energy production, whether it be stable and controlled energy release or rapid and destructive, the best choice of material stays the same. In order to get the highest energy output, you want to choose a material where the diffusion constant $D$ and the reaction constant $\eta$, are very large. The diffusion constant controls how much material per unit area is diffusing or moving away from the source per second. The higher the flux of the neutrons, the more energy you can harness from them. The reaction rate term controls the multiplying factor of the emitted neutrons. The higher the multiplication factor, the more neutrons are likely to be created during the reaction.\\
+
+         The diffusion constant can be determined via a simple relation with the neutron's speed ($v_{\text{neut}}$) and its transport free path $\lambda_t$ \cite{Griffiths_2020}:
+         \begin{equation}
+            D = \frac{\lambda_t v_{\text{neut}}}{3}
+         \end{equation}
+
+         And similarly, the reaction rate $\eta$ can be determined with the neutron's speed, the \textit{fission} free path $\lambda_f$ and the secondary created neutrons from the fission process. It is described mathematically below:
+         \begin{equation}
+            \eta = \frac{v_{\text{neut}} \left( \nu - 1 \right)}{\lambda_f}
+         \end{equation}
+
+         Where the minus one accounts for the neutron that is consumed in the fission reaction. These values can be determined using known properties of elements, but in this report, we rely on table 7 from Griffiths' calculation \cite{Griffiths_2020}. In his paper, Griffiths gives a reaction rate for U$^{235}$ as $2.345 \times 10^5 m^2/s$, and a reaction rate $\eta = 1.896 \times 10^{8} s^{-1}$. For $Pu^{239}$, the reference gives $D = 2.678 \times 10^{5} m^2/s$ and $\eta = 3.005 \times 10^8 s^{-1}$. We can see that both materials have a very large reaction rate and diffusion constant, which make them excellent choices for neutron fuel sources.\\
+
+         \begin{figure}
+            \centering
+            \includegraphics[width=0.5\linewidth]{Graphs/Americium-Graph.png}
+            \caption{Image of the diffusion constant and absorption constant related to the elements energy in MeV. This graph was obtained from \cite{article}. (n, abs) is the absorption coefficient, and (n, f) is the fission or diffusion constant.}
+            \label{Americium}
+         \end{figure}
+
+         The choice of these materials is carefully chosen, based on these two factors. While it is true that larger nuclei require much less energy to break apart, the reason that we do not use even larger elements such as Americium is because they have larger absorption cross sections than their fission cross section. This means that their reactions are almost always sub-critical because the amount of neutrons absorbed is much greater than that in which they are able to produce during fission \cite{article} It just so happens that Uranium and Plutonium isotopes do not have this feature, and their fission cross section is much larger than their absorption. We do not have an interest in using smaller atoms such as iron either, since they are extremely stable on their own, and require more energy to break apart than they release. According to K. Hirano, M. Cohen, and B.L. Averbach, the diffusion constant of paramagnetic alpha iron above $800^\circ C$ is only $1.3 \exp(-56000 / RT)$ \cite{Hirano_Cohen_Averbach_1961}, where $R$ is the universal gas constant, and T is the absolute temperature in Kelvin \cite{6.2.3.1_2013}. The $RT$ term represents the average kinetic energy of the material. If we use $800^\circ C$ as our starting point we see that the diffusion constant in paramagnetic alpha iron is:
+
+         \begin{align}
+            D = 1.3\exp(-56000 / 8.314 \text{J/mol} 1073.15 \text{K}) \longrightarrow D = 0.0024 m^2/s
+         \end{align}
+
+         So we definitely do not want to use Iron in our reaction! It would require us to heat up the iron to more than $800^\circ C$ before there was even the smallest amount of diffusion, that the energy consumed is much more than that produced. \\
+
+         Comparing between the two main choices of Uranium-235 and Plutonium-239, Plutonium-239 is clearly the better choice. However, taking into consideration the difficulty in producing enriched Plutonium, Uranium-235 is easier to obtain in larger quantities, and is more commonly used in the United States \cite{What-is-Plutonium?}.
       \subsection{Small scale diffusion-reaction}
+         How small can we make the objects such that they don't diffuse at all anymore? To determine this, I had to adjust the setup of my implementation. As a default, the program implements the simulation in SI units, this means the objects size is initialized in meters. To adjust for this, I applied a conversion factor when applying the initial conditions from cubic meters to cubic millimeters, and set up the fuel rods to be points in space. Since the fuel rod grid is in meters, anything smaller than a 1m$^3$ shape will appear as a point. So the smaller scale simulations behave as point sources with a smaller density to match that of an equivalent 1mm cube of Plutonium-239. 
+
+         \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.4\linewidth]{Graphs/Small-Simulation.png}
+            \caption{Image of 2 point source neutron emitters placed in the grid.}
+            \label{img:Small Objects in Grid}
+         \end{figure}
+
+         \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.23\linewidth]{Images/Small-Source-1.png}
+            \includegraphics[width=0.23\linewidth]{Images/Small-Source-2.png}
+            \includegraphics[width=0.23\linewidth]{Images/Small-Source-3.png}
+            \includegraphics[width=0.23\linewidth]{Images/Small-Source-4.png}
+            \caption{Images of diffusion of the small diffusion of two 1mm Plutonium Cubes.}
+            \label{img:1mm-Plutonium}
+         \end{figure}
+
+         
+         According to the simulation, this object does produce neutrons! However, only an extremely small amount. Calculating the energy from the density of neutrons at the beginning and the end of the simulation with equation \ref{eq:Energy} we can see that $5420$ J are released!
+         
+         \begin{equation}
+            E = \rho V \cdot 2 \frac{\text{MeV}}{\text{neutron}} \cdot 1.6022 \times 10^{-13} \frac{\text{MeV}}{\text{J}}
+            \eqlabel{Energy}
+         \end{equation}
+         
+         To put this into perspective, we can use the heat equation from Chemistry shown by equation \ref{eq:Chemistry} for a specific heat of water of $c = 4184 J/kg ^\circ C$ and a volume of $250$mL to show that this energy release is equivalent to heating up a $250$mL cup of water by $5.64^\circ C$. This is not a lot of energy, and is roughly in a stable state, so I will consider this reaction non-super-critical, since the output of energy really isnt high enough to be meaningful and likely would be absorbed or lost during the process of starting the diffusion anyways. 
+
+         \begin{equation}
+            Q = mc \Delta T \longrightarrow \Delta T = \frac{Q}{mc}
+            \eqlabel{Chemistry}
+         \end{equation}
+
       \subsection{The effects of fuel rod shape on the energy output}
       \subsection{Decaying, stable, and exponential neutron release}
          So far, I have shown that as the fuel rods get closer together, they eventually reach a point where the regions of interfereing flux make the production of neutrons an exponential growth instead of decay. In this section I will investigate where exactly this happens, for both he Uranium-235 case with Dirichlet boundaries, and the Plutonium Case with Dirichlet boundaries. Dirichlet boundaries are being considered here instead of Neumann boundaries since we only really care about the neutrons interacting in the center of the grid, and keeping the neutrons on the boundaries just increases the density of neutrons everywhere making it harder to analyze the criticality condition.\\

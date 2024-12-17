@@ -5,44 +5,47 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: report-citations.bib
-You've used 4 entries,
+Warning--I'm ignoring Nuclear_Power_2021's extra "title" field
+--line 35 of file report-citations.bib
+You've used 9 entries,
             1876 wiz_defined-function locations,
-            500 strings with 3893 characters,
-and the built_in function-call counts, 443 in all, are:
-= -- 35
-> -- 7
+            530 strings with 4457 characters,
+and the built_in function-call counts, 1443 in all, are:
+= -- 129
+> -- 41
 < -- 0
-+ -- 5
-- -- 1
-* -- 18
-:= -- 53
-add.period$ -- 3
-call.type$ -- 4
-change.case$ -- 4
++ -- 19
+- -- 10
+* -- 85
+:= -- 180
+add.period$ -- 7
+call.type$ -- 9
+change.case$ -- 9
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 16
-empty$ -- 73
-format.name$ -- 1
-if$ -- 117
+cite$ -- 9
+duplicate$ -- 60
+empty$ -- 183
+format.name$ -- 10
+if$ -- 372
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 0
-newline$ -- 15
-num.names$ -- 1
-pop$ -- 29
+int.to.str$ -- 9
+missing$ -- 2
+newline$ -- 30
+num.names$ -- 4
+pop$ -- 52
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 20
+skip$ -- 66
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 56
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 1
-width$ -- 5
-write$ -- 26
+while$ -- 8
+width$ -- 10
+write$ -- 64
+(There was 1 warning)

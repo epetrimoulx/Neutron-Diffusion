@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  16 DEC 2024 19:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  17 DEC 2024 01:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -849,24 +849,24 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 ) (e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.aux)
 \openout1 = `Neutron_Diffusion_Stationary.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -935,7 +935,7 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: sidecap package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 48.
+Package hyperref Info: Link coloring OFF on input line 50.
 \c@lstlisting=\count352
 (C:\Users\epetr\AppData\Local\Programs\MiKTeX\tex/latex/ragged2e\ragged2e.sty
 Package: ragged2e 2022/11/13 v3.2 ragged2e Package
@@ -986,17 +986,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [0{C:/Users/epetr/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
 <Images/Nuclear_Power_Plant.jpg, id=78, 2007.5pt x 1340.00626pt>
 File: Images/Nuclear_Power_Plant.jpg Graphic file (type jpg)
 <use Images/Nuclear_Power_Plant.jpg>
-Package pdftex.def Info: Images/Nuclear_Power_Plant.jpg  used on input line 72.
+Package pdftex.def Info: Images/Nuclear_Power_Plant.jpg  used on input line 74.
 (pdftex.def)             Requested size: 354.12144pt x 236.36526pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
 
@@ -1008,12 +1008,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [1 <./Images/Nuclear_Power_Plant.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
 
  []
 
@@ -1028,20 +1028,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Images/Trinity_Test.jpg, id=110, 183.68625pt x 276.03125pt>
 File: Images/Trinity_Test.jpg Graphic file (type jpg)
 <use Images/Trinity_Test.jpg>
-Package pdftex.def Info: Images/Trinity_Test.jpg  used on input line 111.
+Package pdftex.def Info: Images/Trinity_Test.jpg  used on input line 113.
 (pdftex.def)             Requested size: 126.47249pt x 190.05742pt.
 <Images/Trinity_Bomb.jpg, id=111, 256.96pt x 256.96pt>
 File: Images/Trinity_Bomb.jpg Graphic file (type jpg)
 <use Images/Trinity_Bomb.jpg>
-Package pdftex.def Info: Images/Trinity_Bomb.jpg  used on input line 112.
+Package pdftex.def Info: Images/Trinity_Bomb.jpg  used on input line 114.
 (pdftex.def)             Requested size: 190.36488pt x 190.36699pt.
 <Images/Trinity_Tower.jpg, id=112, 1405.25pt x 1787.67876pt>
 File: Images/Trinity_Tower.jpg Graphic file (type jpg)
 <use Images/Trinity_Tower.jpg>
-Package pdftex.def Info: Images/Trinity_Tower.jpg  used on input line 113.
+Package pdftex.def Info: Images/Trinity_Tower.jpg  used on input line 115.
 (pdftex.def)             Requested size: 148.73486pt x 189.19844pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
@@ -1056,10 +1056,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <Graphs/Graph_FuelRodsInGrid.png, id=119, 294.1389pt x 302.0886pt>
 File: Graphs/Graph_FuelRodsInGrid.png Graphic file (type png)
 <use Graphs/Graph_FuelRodsInGrid.png>
-Package pdftex.def Info: Graphs/Graph_FuelRodsInGrid.png  used on input line 145.
+Package pdftex.def Info: Graphs/Graph_FuelRodsInGrid.png  used on input line 147.
 (pdftex.def)             Requested size: 202.3529pt x 207.82828pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
@@ -1071,41 +1071,110 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [4 <./Graphs/Graph_FuelRodsInGrid.png>]
-<Graphs/Criticality-Test-U235-25m.png, id=129, 422.0568pt x 328.8285pt>
-File: Graphs/Criticality-Test-U235-25m.png Graphic file (type png)
-<use Graphs/Criticality-Test-U235-25m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-U235-25m.png  used on input line 159.
-(pdftex.def)             Requested size: 151.76854pt x 118.24269pt.
-<Graphs/Criticality-Test-U235-27m.png, id=130, 416.2752pt x 328.8285pt>
-File: Graphs/Criticality-Test-U235-27m.png Graphic file (type png)
-<use Graphs/Criticality-Test-U235-27m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-U235-27m.png  used on input line 160.
-(pdftex.def)             Requested size: 151.76854pt x 119.88844pt.
-<Graphs/Criticality-Test-U235-28m.png, id=131, 422.0568pt x 328.8285pt>
-File: Graphs/Criticality-Test-U235-28m.png Graphic file (type png)
-<use Graphs/Criticality-Test-U235-28m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-U235-28m.png  used on input line 161.
-(pdftex.def)             Requested size: 151.76854pt x 118.24269pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
-<Graphs/Criticality-Test-Pu-239-31m.png, id=133, 416.2752pt x 328.8285pt>
+<Graphs/Americium-Graph.png, id=131, 389.95688pt x 268.75406pt>
+File: Graphs/Americium-Graph.png Graphic file (type png)
+<use Graphs/Americium-Graph.png>
+Package pdftex.def Info: Graphs/Americium-Graph.png  used on input line 168.
+(pdftex.def)             Requested size: 252.94499pt x 174.3272pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[5 <./Graphs/Americium-Graph.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 179--180
+
+ []
+
+<Graphs/Small-Simulation.png, id=148, 294.1389pt x 302.0886pt>
+File: Graphs/Small-Simulation.png Graphic file (type png)
+<use Graphs/Small-Simulation.png>
+Package pdftex.def Info: Graphs/Small-Simulation.png  used on input line 187.
+(pdftex.def)             Requested size: 202.3529pt x 207.82828pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Images/Small-Source-1.png, id=149, 445.665pt x 393.72093pt>
+File: Images/Small-Source-1.png Graphic file (type png)
+<use Images/Small-Source-1.png>
+Package pdftex.def Info: Images/Small-Source-1.png  used on input line 194.
+(pdftex.def)             Requested size: 116.35252pt x 102.79156pt.
+<Images/Small-Source-2.png, id=150, 446.41782pt x 392.96812pt>
+File: Images/Small-Source-2.png Graphic file (type png)
+<use Images/Small-Source-2.png>
+Package pdftex.def Info: Images/Small-Source-2.png  used on input line 195.
+(pdftex.def)             Requested size: 116.35252pt x 102.42113pt.
+<Images/Small-Source-3.png, id=151, 462.22687pt x 406.51875pt>
+File: Images/Small-Source-3.png Graphic file (type png)
+<use Images/Small-Source-3.png>
+Package pdftex.def Info: Images/Small-Source-3.png  used on input line 196.
+(pdftex.def)             Requested size: 116.35252pt x 102.33037pt.
+<Images/Small-Source-4.png, id=152, 457.71pt x 402.75468pt>
+File: Images/Small-Source-4.png Graphic file (type png)
+<use Images/Small-Source-4.png>
+Package pdftex.def Info: Images/Small-Source-4.png  used on input line 197.
+(pdftex.def)             Requested size: 116.35252pt x 102.37843pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[6]
+<Graphs/Criticality-Test-U235-25m.png, id=166, 422.0568pt x 328.8285pt>
+File: Graphs/Criticality-Test-U235-25m.png Graphic file (type png)
+<use Graphs/Criticality-Test-U235-25m.png>
+Package pdftex.def Info: Graphs/Criticality-Test-U235-25m.png  used on input line 225.
+(pdftex.def)             Requested size: 151.76854pt x 118.24269pt.
+<Graphs/Criticality-Test-U235-27m.png, id=167, 416.2752pt x 328.8285pt>
+File: Graphs/Criticality-Test-U235-27m.png Graphic file (type png)
+<use Graphs/Criticality-Test-U235-27m.png>
+Package pdftex.def Info: Graphs/Criticality-Test-U235-27m.png  used on input line 226.
+(pdftex.def)             Requested size: 151.76854pt x 119.88844pt.
+<Graphs/Criticality-Test-U235-28m.png, id=168, 422.0568pt x 328.8285pt>
+File: Graphs/Criticality-Test-U235-28m.png Graphic file (type png)
+<use Graphs/Criticality-Test-U235-28m.png>
+Package pdftex.def Info: Graphs/Criticality-Test-U235-28m.png  used on input line 227.
+(pdftex.def)             Requested size: 151.76854pt x 118.24269pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+
+ []
+
+<Graphs/Criticality-Test-Pu-239-31m.png, id=170, 416.2752pt x 328.8285pt>
 File: Graphs/Criticality-Test-Pu-239-31m.png Graphic file (type png)
 <use Graphs/Criticality-Test-Pu-239-31m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-Pu-239-31m.png  used on input line 170.
+Package pdftex.def Info: Graphs/Criticality-Test-Pu-239-31m.png  used on input line 236.
 (pdftex.def)             Requested size: 227.64894pt x 179.82764pt.
-<Graphs/Criticality-Test-Pu-239-36m.png, id=134, 409.7709pt x 328.8285pt>
+<Graphs/Criticality-Test-Pu-239-36m.png, id=171, 409.7709pt x 328.8285pt>
 File: Graphs/Criticality-Test-Pu-239-36m.png Graphic file (type png)
 <use Graphs/Criticality-Test-Pu-239-36m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-Pu-239-36m.png  used on input line 171.
+Package pdftex.def Info: Graphs/Criticality-Test-Pu-239-36m.png  used on input line 237.
 (pdftex.def)             Requested size: 227.64894pt x 182.6826pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
@@ -1116,103 +1185,107 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5 <./Graphs/Criticality-Test-U235-25m.png> <./Graphs/Criticality-Test-U235-27m.png> <./Graphs/Criticality-Test-U235-28m.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+[7 <./Graphs/Small-Simulation.png> <./Images/Small-Source-1.png> <./Images/Small-Source-2.png> <./Images/Small-Source-3.png> <./Images/Small-Source-4.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[8 <./Graphs/Criticality-Test-U235-25m.png> <./Graphs/Criticality-Test-U235-27m.png> <./Graphs/Criticality-Test-U235-28m.png> <./Graphs/Criticality-Test-Pu-239-31m.png> <./Graphs/Criticality-Test-Pu-239-36m.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
 
 File: Graphs/Graph_FuelRodsInGrid.png Graphic file (type png)
 <use Graphs/Graph_FuelRodsInGrid.png>
-Package pdftex.def Info: Graphs/Graph_FuelRodsInGrid.png  used on input line 199.
+Package pdftex.def Info: Graphs/Graph_FuelRodsInGrid.png  used on input line 265.
 (pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
-<Graphs/Graph_FuelRodInGrid_Middle.png, id=147, 294.1389pt x 302.0886pt>
+<Graphs/Graph_FuelRodInGrid_Middle.png, id=197, 294.1389pt x 302.0886pt>
 File: Graphs/Graph_FuelRodInGrid_Middle.png Graphic file (type png)
 <use Graphs/Graph_FuelRodInGrid_Middle.png>
-Package pdftex.def Info: Graphs/Graph_FuelRodInGrid_Middle.png  used on input line 200.
+Package pdftex.def Info: Graphs/Graph_FuelRodInGrid_Middle.png  used on input line 266.
 (pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
-<Graphs/GraphFuelRodInGrid_Close.png, id=148, 294.1389pt x 302.0886pt>
+<Graphs/GraphFuelRodInGrid_Close.png, id=198, 294.1389pt x 302.0886pt>
 File: Graphs/GraphFuelRodInGrid_Close.png Graphic file (type png)
 <use Graphs/GraphFuelRodInGrid_Close.png>
-Package pdftex.def Info: Graphs/GraphFuelRodInGrid_Close.png  used on input line 201.
+Package pdftex.def Info: Graphs/GraphFuelRodInGrid_Close.png  used on input line 267.
 (pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Graphs/DirichletCubes_Density_Vs_Time_Far.png, id=149, 422.0568pt x 328.8285pt>
+<Graphs/DirichletCubes_Density_Vs_Time_Far.png, id=199, 422.0568pt x 328.8285pt>
 File: Graphs/DirichletCubes_Density_Vs_Time_Far.png Graphic file (type png)
 <use Graphs/DirichletCubes_Density_Vs_Time_Far.png>
-Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Far.png  used on input line 208.
+Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Far.png  used on input line 274.
 (pdftex.def)             Requested size: 161.8885pt x 126.13022pt.
-<Graphs/DirichletCubes_Density_Vs_Time_Middle.png, id=150, 409.7709pt x 328.8285pt>
+<Graphs/DirichletCubes_Density_Vs_Time_Middle.png, id=200, 409.7709pt x 328.8285pt>
 File: Graphs/DirichletCubes_Density_Vs_Time_Middle.png Graphic file (type png)
 <use Graphs/DirichletCubes_Density_Vs_Time_Middle.png>
-Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Middle.png  used on input line 209.
+Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Middle.png  used on input line 275.
 (pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
-<Graphs/DirichletCubes_Density_Vs_Time_Close.png, id=151, 409.7709pt x 328.8285pt>
+<Graphs/DirichletCubes_Density_Vs_Time_Close.png, id=201, 409.7709pt x 328.8285pt>
 File: Graphs/DirichletCubes_Density_Vs_Time_Close.png Graphic file (type png)
 <use Graphs/DirichletCubes_Density_Vs_Time_Close.png>
-Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Close.png  used on input line 210.
+Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Close.png  used on input line 276.
 (pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
-<Images/Dirichlet-25m-Image.png, id=152, 459.96844pt x 410.2828pt>
+<Images/Dirichlet-25m-Image.png, id=202, 459.96844pt x 410.2828pt>
 File: Images/Dirichlet-25m-Image.png Graphic file (type png)
 <use Images/Dirichlet-25m-Image.png>
-Package pdftex.def Info: Images/Dirichlet-25m-Image.png  used on input line 217.
+Package pdftex.def Info: Images/Dirichlet-25m-Image.png  used on input line 283.
 (pdftex.def)             Requested size: 126.47249pt x 112.81247pt.
-<Images/Dirichlet-20m-Image.png, id=153, 455.45157pt x 411.78844pt>
+<Images/Dirichlet-20m-Image.png, id=203, 455.45157pt x 411.78844pt>
 File: Images/Dirichlet-20m-Image.png Graphic file (type png)
 <use Images/Dirichlet-20m-Image.png>
-Package pdftex.def Info: Images/Dirichlet-20m-Image.png  used on input line 218.
+Package pdftex.def Info: Images/Dirichlet-20m-Image.png  used on input line 284.
 (pdftex.def)             Requested size: 126.47249pt x 114.3449pt.
-<Images/Dirichlet-10m-Image.png, id=154, 456.95718pt x 402.75468pt>
+<Images/Dirichlet-10m-Image.png, id=204, 456.95718pt x 402.75468pt>
 File: Images/Dirichlet-10m-Image.png Graphic file (type png)
 <use Images/Dirichlet-10m-Image.png>
-Package pdftex.def Info: Images/Dirichlet-10m-Image.png  used on input line 219.
+Package pdftex.def Info: Images/Dirichlet-10m-Image.png  used on input line 285.
 (pdftex.def)             Requested size: 126.47249pt x 111.46768pt.
-<Images/Neumann-25m-Image.png, id=155, 460.72125pt x 408.02437pt>
+<Images/Neumann-25m-Image.png, id=205, 460.72125pt x 408.02437pt>
 File: Images/Neumann-25m-Image.png Graphic file (type png)
 <use Images/Neumann-25m-Image.png>
-Package pdftex.def Info: Images/Neumann-25m-Image.png  used on input line 220.
+Package pdftex.def Info: Images/Neumann-25m-Image.png  used on input line 286.
 (pdftex.def)             Requested size: 126.47249pt x 112.0047pt.
-<Images/Neumann-20m-Image.png, id=156, 457.71pt x 405.01312pt>
+<Images/Neumann-20m-Image.png, id=206, 457.71pt x 405.01312pt>
 File: Images/Neumann-20m-Image.png Graphic file (type png)
 <use Images/Neumann-20m-Image.png>
-Package pdftex.def Info: Images/Neumann-20m-Image.png  used on input line 221.
+Package pdftex.def Info: Images/Neumann-20m-Image.png  used on input line 287.
 (pdftex.def)             Requested size: 126.47249pt x 111.90733pt.
-<Images/Neumann-10m-Image.png, id=157, 448.67625pt x 404.26031pt>
+<Images/Neumann-10m-Image.png, id=207, 448.67625pt x 404.26031pt>
 File: Images/Neumann-10m-Image.png Graphic file (type png)
 <use Images/Neumann-10m-Image.png>
-Package pdftex.def Info: Images/Neumann-10m-Image.png  used on input line 222.
+Package pdftex.def Info: Images/Neumann-10m-Image.png  used on input line 288.
 (pdftex.def)             Requested size: 126.47249pt x 113.95084pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[6 <./Graphs/Criticality-Test-Pu-239-31m.png> <./Graphs/Criticality-Test-Pu-239-36m.png>]
-<Graphs/NeumannCubes_Density_Vs_Time_Far.png, id=171, 416.2752pt x 328.8285pt>
+<Graphs/NeumannCubes_Density_Vs_Time_Far.png, id=209, 416.2752pt x 328.8285pt>
 File: Graphs/NeumannCubes_Density_Vs_Time_Far.png Graphic file (type png)
 <use Graphs/NeumannCubes_Density_Vs_Time_Far.png>
-Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Far.png  used on input line 233.
+Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Far.png  used on input line 299.
 (pdftex.def)             Requested size: 161.8885pt x 127.88133pt.
-<Graphs/NeumannCubes_Density_Vs_Time_Middle.png, id=172, 409.7709pt x 328.8285pt>
+<Graphs/NeumannCubes_Density_Vs_Time_Middle.png, id=210, 409.7709pt x 328.8285pt>
 File: Graphs/NeumannCubes_Density_Vs_Time_Middle.png Graphic file (type png)
 <use Graphs/NeumannCubes_Density_Vs_Time_Middle.png>
-Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Middle.png  used on input line 234.
+Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Middle.png  used on input line 300.
 (pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
-<Graphs/NeumannCubes_Density_Vs_Time_Close.png, id=173, 409.7709pt x 328.8285pt>
+<Graphs/NeumannCubes_Density_Vs_Time_Close.png, id=211, 409.7709pt x 328.8285pt>
 File: Graphs/NeumannCubes_Density_Vs_Time_Close.png Graphic file (type png)
 <use Graphs/NeumannCubes_Density_Vs_Time_Close.png>
-Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Close.png  used on input line 235.
+Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Close.png  used on input line 301.
 (pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--251
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9 <./Graphs/Graph_FuelRodInGrid_Middle.png> <./Graphs/GraphFuelRodInGrid_Close.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 315--317
 
  []
 
@@ -1223,8 +1296,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[7 <./Graphs/Graph_FuelRodInGrid_Middle.png> <./Graphs/GraphFuelRodInGrid_Close.png> <./Graphs/DirichletCubes_Density_Vs_Time_Far.png> <./Graphs/DirichletCubes_Density_Vs_Time_Middle.png> <./Graphs/DirichletCubes_Density_Vs_Time_Close.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+[10 <./Graphs/DirichletCubes_Density_Vs_Time_Far.png> <./Graphs/DirichletCubes_Density_Vs_Time_Middle.png> <./Graphs/DirichletCubes_Density_Vs_Time_Close.png> <./Images/Dirichlet-25m-Image.png> <./Images/Dirichlet-20m-Image.png> <./Images/Dirichlet-10m-Image.png> <./Images/Neumann-25m-Image.png> <./Images/Neumann-20m-Image.png> <./Images/Neumann-10m-Image.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
 
  []
 
@@ -1235,8 +1308,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[8 <./Images/Dirichlet-25m-Image.png> <./Images/Dirichlet-20m-Image.png> <./Images/Dirichlet-10m-Image.png> <./Images/Neumann-25m-Image.png> <./Images/Neumann-20m-Image.png> <./Images/Neumann-10m-Image.png> <./Graphs/NeumannCubes_Density_Vs_Time_Far.png> <./Graphs/NeumannCubes_Density_Vs_Time_Middle.png> <./Graphs/NeumannCubes_Density_Vs_Time_Close.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+[11 <./Graphs/NeumannCubes_Density_Vs_Time_Far.png> <./Graphs/NeumannCubes_Density_Vs_Time_Middle.png> <./Graphs/NeumannCubes_Density_Vs_Time_Close.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 322--323
 
  []
 
@@ -1247,7 +1320,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9] (e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.bbl)
+[12] (e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.bbl)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1259,20 +1332,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.266 \end{document}
+l.332 \end{document}
                      [1] (e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.aux) ) 
 Here is how much of TeX's memory you used:
- 45753 strings out of 475281
- 1099272 string characters out of 2774064
- 1537463 words of memory out of 3000000
- 66328 multiletter control sequences out of 15000+600000
+ 45822 strings out of 475281
+ 1100901 string characters out of 2774064
+ 1538229 words of memory out of 3000000
+ 66375 multiletter control sequences out of 15000+600000
  477319 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,103p,2475b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 99i,12n,103p,2475b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
 <C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.pdf (11 pages, 2065143 bytes).
+Output written on e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.pdf (14 pages, 2287749 bytes).
 PDF statistics:
- 316 PDF objects out of 1000 (max. 8388607)
- 46 named destinations out of 1000 (max. 500000)
- 389 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 367 PDF objects out of 1000 (max. 8388607)
+ 62 named destinations out of 1000 (max. 500000)
+ 419 words of extra memory for PDF output out of 10000 (max. 10000000)
 
