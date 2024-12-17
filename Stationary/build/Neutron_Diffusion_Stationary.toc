@@ -11,3 +11,4 @@
 \contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax E.}Dirichlet vs. Neumann boundary conditions}{15}{subsection.3.5}%
 \contentsline {section}{\numberline {IV.} Methods}{16}{section.4}%
 \contentsline {section}{\numberline {V.} Discussion and Ideas for Extension}{17}{section.5}%
+\contentsline {section}{\numberline {VI.} Conclusion}{18}{section.6}%
