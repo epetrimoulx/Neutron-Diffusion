@@ -9,7 +9,6 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{bbold}
-\usepackage{hyperref}
 \usepackage{caption}
 \usepackage{graphicx}
 \usepackage{float}
@@ -20,13 +19,34 @@
 \usepackage{bookmark}
 \usepackage{fancyhdr}
 \usepackage{tikz-cd}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
 \usepackage[most]{tcolorbox} 
 \usepackage[rightcaption]{sidecap}
 \usepackage[shortlabels]{enumitem}
 
+
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\null \quad \Alph{subsection}.}
+
+% \hypersetup{hidelinks}
 \geometry{margin=0.75in,top=1in}
+\pgfplotsset{compat=1.18}
+
+
+\titleformat{\section}[block]
+  {\normalfont\normalsize\bfseries}
+  {\thesection}
+  {1em}{}
+
+\titleformat{\subsection}[block]
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}
+  {1em}{}
+
 
 \begin{document}
+   \setcounter{page}{0}.
     \begin{center}
         {\Large Simulating an Atomic Bomb - An Exercise in Neutron Diffusion\\}
         \vspace{0.5em}
@@ -40,47 +60,207 @@
     \fancyfoot[R]{}
     \setlength{\droptitle}{-6em}
 
+    \vspace{0.25cm}
+
     \tableofcontents
     \newpage
+    \section{ Introduction}
+      The aim of this project is to study the process of neutron diffusion and reaction inside of a reaction chamber. It will focus on how different materials such as U$^{235}$ and Pu$^{239}$ are used as fissile source materials for the reaction, and how the shape and size of these fuel rods affect the energy output of the system. \\
 
-    \section*{Background}
-         Diffusion is a process in which something moves from an area of high density to an area of lower density. It can be described in physical systems by \textit{Fick's equation} \cite{Nuclear_Power_2021}.
+      \begin{figure}[h!]
+         \centering
+         \includegraphics[width = 0.7\linewidth]{Images/Nuclear_Power_Plant.jpg}
+         \caption{The above figure displays a nuclear power plant which uses fission as an energy source to supply electricity!}
+         \label{img:Nuclear_Reactor}
+      \end{figure}
+
+
+      There are two common examples of this process; nuclear power plants \ref{img:Nuclear_Reactor} and atomic weapons of mass destruction \ref{img:Trinity_Test}. Nuclear power plants utilize the diffusion-reaction of fissile materials in a stable state, where the number of neutrons emitted from the reaction is a constant. This allows for control over the reaction, in which we can use the energy output to boil water, generate steam, and produce electricity. Atomic weapons utilize the diffusion-reaction of fissile materials in a super-critical state, where the reaction is so violent that there is an uncontrollable and exponential growth of produced neutrons, emitting vast amounts of energy in a large explosion. These types of weapons are what was used at the end of the second World War by the Americans to conclude the war in the Pacific. \\
+
+      This report will focus primarily on unstable, exponentially growing production of neutrons, and will investigate various configurations of interacting fissile material, comparing its energy output to items of similar scale. I will also discuss energy output optimization, and how to determine the largest output energy possible given two sources of fissile material. Determining the best material to use for the diffusion process, as well as determining the distance of separation between the two objects and their minimum possible size to produce a reaction will also be areas of investigation within this report.
+
+    \section{ Background}
+      \subsection{What is Diffusion?}
+         Diffusion is defined as "the spreading of something more widely". It can be described as the movement of particles from an area of high concentration to an area of low concentration until an equilibrium is reached \cite{Diffusion-Defn}. It is responsible for the way a smell from your kitchen travels around your house, how your body processes and breathes in Oxygen into your lungs, how the mist from a perfume bottle spreads outwards, and even how your car warms up when you turn the engine on. Diffusion is present in almost everything we do, and has many practical applications in science and engineering. \textit{Neutron Diffusion} is the process in which neutrons from some source are ejected from their nucleus and disperse throughout a medium. It is commonly used in nuclear reactors to produce energy. 
+
+      \subsection{History}
+         The phenomena of diffusion has been known since the early 19th century. The work was primarily discovered by Jean Baptiste Joseph Fourier in 1807, where he presented his formula for the dispersion of heat throughout a solid. It wasn't until he published his work on \textit{The Analytic Theory of Heat} in 1822 when his theories of heat had finally become accepted by scientists \cite{History}. His equation for the diffusion of heat can be written down as the following partial differential equation:
+
+         \begin{equation}
+            \frac{\partial}{\partial t} \phi (\vec{r}, t) = \kappa \nabla^2 \phi (\vec{r}, t)
+         \end{equation}
+
+         If this equation is constrained to the initial conditions that the Heat at the boundaries is zero, known as \textit{Dirichlet boundary conditions}, and the Heat at the initial time is given by some function, we can show that the PDE has the following solution for a rectangular prism of width $a$, length $b$, and height $c$:
+
+         \begin{equation}
+            \phi (\vec{r}, t) = \frac{8}{abc} \sum_{m=1}^\infty \sum_{n=1}^\infty \sum_{l = 1}^\infty  A_{mnl} \sin \left( \frac{m \pi x}{a} \right) \sin \left( \frac{n \pi y}{b} \right) \sin \left( \frac{l \pi z}{c} \right) e^{-\kappa \pi^2 \left( \frac{m^2}{a^2} + \frac{n^2}{b^2} + \frac{l^2}{c^2}\right) t}
+         \end{equation}
+
+         Where $ A_{mnl}$ is defined as:
+
+         \begin{equation}
+            A_{mnl} = \int_0^a \int_0^b \int_0^c \phi (\vec{r}, 0) \sin \left( \frac{m \pi x}{a} \right) \sin \left( \frac{n \pi y}{b} \right) \sin \left( \frac{l \pi z}{c} \right)dx dy dz
+         \end{equation}
+
+         Since the equation is a PDE, its solution can have multiple forms depending on the shape of the object, and the boundary conditions being applied. It behaves as a decaying exponential, which implies that when the boundaries absorb heat, the material will eventually radiate all of its heat away and return back to equillibrium. This equation was not as "obvious" as it might seem to us, since there was no guarentee that the right hand side of the equation converged. It took Fourier more than 50 years to prove the convergence with his discovery of the \textit{Fourier Series} \cite{History}. The heat equation is now considered a cornerstone of the theory of thermodynamics and is well studied by students in Physics and Engineering.\\
+
+         Fast forwarding through time, we now get to the 20th century. The discovery of Quantum Mechanics has revolutionized the worlds understanding of Physics, and while it was a great time of growth for science, it was also a time of war. Scientists had just discovered that it was possible to split an atom, and unleashing the strong force became of great interest due to the high amounts of energy this process could release. Countries on both the Allied and Axis forces scrambled to find a way to make a weapon they could unleash on their enemies and stop the war in its tracks. Scientists at Los Alamos found that by using fissile materials such as Plutonium-239, they could initiate a diffusion-reaction of neutrons by splitting the nucleus of the atom apart. This process would fire off neutrons which would then collide and interact with other neutrons, creating even more neutrons, releasing even more energy. This cycle would continue until the sources were annihilated, and a violent explosion from the release of energy would ensue \ref{img:Trinity_Test}. The equation that modelled this process is known as the \textit{Diffusion-Reaction Equation}. The scientists at Los Alamos were able to successfully create the worlds first atomic bomb before the Nazis, and the first bomb was set off in a test known as \textit{Trinity} on July 16th 1945. The United States used their remaining two atomic warheads to end the war in the Pacific, forcing a surrender from the Japanese forces in just three days.\\
+
+         \begin{figure}
+            \centering
+            \includegraphics[width = 0.25\linewidth]{Images/Trinity_Test.jpg}
+            \includegraphics[width = 0.3763\linewidth]{Images/Trinity_Bomb.jpg}
+            \includegraphics[width = 0.294\linewidth]{Images/Trinity_Tower.jpg}
+            \caption{The Detonation of the first atomic bomb, named Trinity, on July 16th 1945 in Los Alamos, New Mexico, USA}
+            \label{img:Trinity_Test}
+         \end{figure}
+
+         Fast forwarding to the present, the world has utilized the discovery for good, and scientists learned how to handle the reaction in a stable and managable state. Nuclear power plants have been constructed which are capable of powering entire cities with just a few kilograms of Uranium, and the diffusion process is studied by many nuclear engineers and physicists who research how to harness the energy released from the reaction.
+
+      \subsection{The Diffusion-Reaction Equation}
+         Diffusion is a process in which something moves from an area of high density to an area of lower density. It can be described in physical systems by \textit{Fick's equation} \cite{Nuclear_Power_2021}. This one dimensional equation is analgous to the heat equation, where the right hand side handles the dispersion of material over space, and then left hand side describes the dispersion of material over time. 
 
          \begin{align*}
             J = -D \frac{\partial n}{\partial x}
          \end{align*}
 
-         \noindent Where $D$ is the diffusion coefficient, $J$ is the diffusion flux (The amount of material moving away from the region of higher concentration per unit area per unit time). $n$ is the concentration of the material and $x$ is its position. This project will involve the study of diffusion in neutrons, particularly in its use inside of nuclear reactor cores and atomic weapons to produce high energy output. The study of neutron diffusion was a key point of interest at Los Alamos during the Manhatten Project during the second world war \cite{Griffiths_2020}. In this project I will study different configurations for stable neutron diffusion and chain reaction neutron diffusion in fissile materials in order to determine maximum energy output.
-    \section*{Key Questions}
-         \begin{enumerate}
-            \item How do the different types of boundary condition approximations affect the energy output of the system? (Dirichlet Boundary Condition vs Neumann Boundary Condition)
-            \item What is the critical mass of a fissile material? In other words at what point in these reactions does the process grow exponentially?
-            \item How does the choice of material change the energy output of the diffusion? Which materials are the best?
-            \item What is the minimum size the material such that neutron diffusion is still possible \cite{Serber_Rhodes_2020}?
-            \item How does the shape of the fuel rods impact the output of energy?
-         \end{enumerate}
-    \section*{Objectives}
-         \begin{enumerate}
-            \item Understand the theory of diffusion in atomic systems and how it can be used to produce energy.
-            \item Write code to simulate the neutron diffusion process for different boundary conditions on the materials being used. I will start with a simple cube and then move to more complicated shapes.
-            \item Determine which materials are most optimal for the diffusion process
-            \item Determine what the maximum quantity for optimal energy output is for different fissile materials. More specifically finding the exact point when the process becomes exponential.
-            \item Determine the minimum quantity for a positive energy output in different fissile materials.
-            \item Relate these results to that of current nuclear power plants to compare.
-            \item Test different boundary conditions and thier energy output to the energy output of other power producing methods.
-         \end{enumerate}
-         
-    \section*{Methods and Benchmarks}
-         \begin{enumerate}
-            \item Implement Fick's Equation with Neumann Boundary Conditions using the Crank - Nicolson method for stable solutions
-            \item Implement Fick's Equation with Dirchlet Boundary Conditions using the Crank - Nicolson method for stable solutions
-            \item Use a mixture of methods developed in class such as RK4, Verlet Integration, ODE solvers, and PDE solvers to model the ideal shape and material for a high energy output via neutron diffusion. I will mainly focus on the Crank - Nicolson methods for stable PDE solutions.
-            \item Benchmark the solution via simulating analytic solutions for simple shapes such as a sphere or cyclinder. Compare these results to that of our numerically solved shape.
-            \item Benchmark the solution by comparing to the energy output of the Demon Core.
-         \end{enumerate}
+         Here, $D$ is the diffusion coefficient, $J$ is the diffusion flux (The amount of material moving away from the region of higher concentration per unit area per unit time), $n$ is the concentration of the material and $x$ is its position. Differentiating both sides of the equation with respect to position we retrieve the heat equation.\\
 
-    \pagenumbering{arabic}
-    \vspace{-0.5cm}
-    \bibliographystyle{ieeetr}
-    \bibliography{proposal-citations}
+         In a diffusion-reaction process, the material that is diffusing away from the source also interacts with its surroundings. Neutrons that are fired off from the nucleus can collide with other particles to create \textit{more} neutrons. The diffusion reaction equation is modelled as an extension to Fick's equation and the heat equation, and is written as:
+
+         \begin{equation}
+            \frac{\partial}{\partial t} \phi (\vec{r}, t) = \kappa \nabla^2 \phi (\vec{r}, t) + \eta \phi (\vec{r}, t)
+         \end{equation}
+
+         Where $\eta$ is the reaction rate of the system, and describes how the neutrons interact with their environment to either absorb or create more fission. The greater the value of $\eta$, the more fission occurs, and the density and energy output increases. If the reaction rate is negative, it means more neutrons are being absorbed than generated, and the system's density decreases.
+    \section{ Neutron Diffusion Reaction}
+      In this section we will model the diffusion-reaction equation in 3D space using 2 fuel rods as neutron sources. The simulation grid is set to a 40 meter wide cube, and the fuel rods are placed inside of the 3D mesh. The diffusion-reaction equation is modelled numerically using a 3D stencil and a finite difference method solver for the spatial derivatives.
+
+      \begin{equation}
+         \nabla^2 n \approx \frac{1}{\delta x^2} \left( n_{i+1, j, k} + n_{i-1, j, k} + n_{i, j+1, k} + n_{i, j-1, k} + n_{i, j, k+1} + n_{i, j, k-1} - 6n_{i, j, k} \right).
+      \end{equation}
+
+      \begin{figure}[h!]
+         \centering
+         \includegraphics[width=0.4\linewidth]{Graphs/Graph_FuelRodsInGrid.png}
+         \caption{Image of two cube-shaped fuel rods being placed into the simulation grid.}
+      \end{figure}
+
+      \subsection{Choosing a material}
+      \subsection{Small scale diffusion-reaction}
+      \subsection{The effects of fuel rod shape on the energy output}
+      \subsection{Decaying, stable, and exponential neutron release}
+         So far, I have shown that as the fuel rods get closer together, they eventually reach a point where the regions of interfereing flux make the production of neutrons an exponential growth instead of decay. In this section I will investigate where exactly this happens, for both he Uranium-235 case with Dirichlet boundaries, and the Plutonium Case with Dirichlet boundaries. Dirichlet boundaries are being considered here instead of Neumann boundaries since we only really care about the neutrons interacting in the center of the grid, and keeping the neutrons on the boundaries just increases the density of neutrons everywhere making it harder to analyze the criticality condition.\\
+
+         Starting in a region between a separation distance of 20 and 30, we can move the blocks slightly farther and farther away from one another until we no longer go critical. This will give us a close approximation of how far apart they need to be.
+
+         \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.3\linewidth]{Graphs/Criticality-Test-U235-25m.png}
+            \includegraphics[width=0.3\linewidth]{Graphs/Criticality-Test-U235-27m.png}
+            \includegraphics[width=0.3\linewidth]{Graphs/Criticality-Test-U235-28m.png}
+            \caption{Images of the neutron density over time for Uranium$^{235}$ cubic fuel rods at separation distances of 25m (Left), 27m (Center), and 28m (Right)}
+            \label{img:Uranium-Criticality-Test}
+         \end{figure}
+
+         We can see in figure \ref{img:Uranium-Criticality-Test} that the stability condition for these $8m^3$ fuel rods is a separation distance between 27m and 28m. This might seem surprising since that is a large distance, but considering that two $8m^3$ fuel rods of Uranium is probably unstable on its own, and would weigh more than 20,000 tons, the separation distance is fairly reasonable.\\
+
+         \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.45\linewidth]{Graphs/Criticality-Test-Pu-239-31m.png}
+            \includegraphics[width=0.45\linewidth]{Graphs/Criticality-Test-Pu-239-36m.png}
+            \caption{Images of the neutron density over time for Plutonium$^{239}$ cubic fuel rods at separation distances of 31m (Left) and 36m (Right)}
+            \label{img:Plutonium-Criticality-Test}
+         \end{figure}
+
+         Since Plutonium has a higher reaction rate and diffusion constant than the Uranium (U$^{235}$ has a reaction rate of $\eta = 1.896 \times 10^8$ and a diffusion constant of $D = 2.34 \times 10^5$  vs. Pu$^{239}$ has a reaction rate of $\eta = 3.0055 \times 10^{8}$ and a diffusion constant of $D = 2.6786 \times 10^5$), we can expect that the Plutonium needs to be stored farther away than that of the Uranium. A higher diffusion constant means more neutrons are leaving the material, and at a faster rate every second, and a higher reaction rate means those neutrons are producing more neutrons in the reaction, faster.\\
+
+         As seen in figure \ref{img:Plutonium-Criticality-Test}, the fuel rods do in fact need to be stored further away than the Uranium rods. In order to calculate this simulation, the size of the simulation grid had to be expanded to more than 40 meters. It was found during this simulation that the minimum distance that the fuel rods could be separated without causes an explosion was at 36m.
+
+
+      \subsection{Dirichlet vs. Neumann boundary conditions}
+         In this section we aim to compare how the different boundary conditions can affect the system's behaviour. The main difference here is the Neumann boundary conditions act as a reflector on the boundary, and reflect the neutrons back into the system. Dirichlet boundarys act as absorbing boundary conditions which remove the neutrons from the system entirely. It is defined with the following mathematical relation:
+
+         \begin{equation}
+            \phi = \alpha
+         \end{equation}
+      
+         Where $\alpha$ is some constant value. In our case, $\alpha = 0$, and our boundary is perfectly absorbing.
+         This affects the design of our nuclear device. The simulations utilizing Dirichlet conditions assume that the neutrons that diffuse away from the fuel rods leave the system, while the Neumann conditions are set up so that our device reflects the neutrons back towards the detonation center. We can predict that the Neumann conditions should lead to a more violent explosion and release of energy since there will be more lingering neutrons in the system to interact with one another during the detonation. The Neumann boundary conditions are defined as follows:
+         \begin{equation}
+            \frac{\partial \phi}{\partial \hat{n}} = 0 
+         \end{equation}
+
+         where $\phi$ is the neutron density, and $\hat{n}$ is the normal vector to the boundary surface.\\
+
+         To test this I will simulate two colliding cubes of Uranium$^{235}$, and analyze how the energy output of the system changes based on the boundary conditions used. I will start with the Dirichlet case depicted in figure \ref{img:Dirichlet_Cubes}, and then move on the the Neumann case afterwards depicted in figure \ref{img:Neumann_Cubes}.
+         \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.3\linewidth]{Graphs/Graph_FuelRodsInGrid.png}
+            \includegraphics[width=0.3\linewidth]{Graphs/Graph_FuelRodInGrid_Middle.png}
+            \includegraphics[width=0.3\linewidth]{Graphs/GraphFuelRodInGrid_Close.png}
+            \caption{Images of the Uranium-235 fuel rods moving closer together in the simulation grid}
+            \label{img:CubesInGrid}
+         \end{figure}
+
+         \begin{figure}[t]
+            \centering
+            \includegraphics[width=0.32\linewidth]{Graphs/DirichletCubes_Density_Vs_Time_Far.png}
+            \includegraphics[width=0.32\linewidth]{Graphs/DirichletCubes_Density_Vs_Time_Middle.png}
+            \includegraphics[width=0.32\linewidth]{Graphs/DirichletCubes_Density_Vs_Time_Close.png}
+            \caption{Average neutron density over time for the Dirichlet Boundary Conditions at a separation distance of 25m, 20m, and 10m}
+            \label{img:Dirichlet_Cubes}
+         \end{figure}
+
+         \begin{figure}[t]
+            \centering
+            \includegraphics[width=0.25\linewidth]{Images/Dirichlet-25m-Image.png}
+            \includegraphics[width=0.25\linewidth]{Images/Dirichlet-20m-Image.png}
+            \includegraphics[width=0.25\linewidth]{Images/Dirichlet-10m-Image.png} \\
+            \includegraphics[width=0.25\linewidth]{Images/Neumann-25m-Image.png}
+            \includegraphics[width=0.25\linewidth]{Images/Neumann-20m-Image.png}
+            \includegraphics[width=0.25\linewidth]{Images/Neumann-10m-Image.png}
+            \caption{Neutron density heat map for Dirichlet boundary conditions (Top), and Neumann boundary conditions (Bottom), for distances of 25m, 20m, and 10m separation respectively.}
+            \label{img:Boundary-Condition-Testing}
+         \end{figure}
+
+         As shown in figure \ref{img:Boundary-Condition-Testing}, we still get a similar explosion in the center, but the values around the edges of the simulation are much greater! We can conclude here that the effect only really makes a difference in neutron density when the objects are closer to the boundaries and farther away. This is likely because the reaction is strong enough at the center that the production of neutrons overpowers the absorbing or reflecting boundary conditions. \\
+
+         The most important thing to notice however is that the Neumann boundary conditions require the objects to be farther apart. Since the average density in the simulation grid is higher even at farther separation distances, the chance of an explosion is very high. We can conclude that Dirichlet boundary conditions should be used when trying to keep a stable reaction (at $k = 1$ for example) where the fuel rods are either slowly decaying, or equally producing neutrons and losing them. Neumann boundary conditions should be used in the design of something like a nuclear weapon, since more neutrons are staying in the simulation.
+
+         \begin{figure}[b]
+            \centering
+            \includegraphics[width=0.32\linewidth]{Graphs/NeumannCubes_Density_Vs_Time_Far.png}
+            \includegraphics[width=0.32\linewidth]{Graphs/NeumannCubes_Density_Vs_Time_Middle.png}
+            \includegraphics[width=0.32\linewidth]{Graphs/NeumannCubes_Density_Vs_Time_Close.png}
+            \caption{Average neutron density over time for the Neumann Boundary Conditions at a separation distance of 25m, 20m, and 10m}
+            \label{img:Neumann_Cubes}
+         \end{figure}
+
+      \subsection{Comparison to the analytic cubic fuel rod solution}
+
+    \section{  Methods}
+      In order to simulate the neutron diffusion process for various materials and shapes I used a 6 point stencil in 3D space to calculate the Laplacian using a finite difference method. The method was adapted from the \textit{diffusion-2d} method developed in class. In order to determine the appropriate time step size to ensure numerical stability, I implemented a CFL condition dependant on the grid spacing and diffusion constant. The Satisfied CFL condition is written mathematically below:
+      
+      \begin{equation}
+         \delta t \le \frac{\delta x^2}{6D}
+      \end{equation}
+
+      This ensures numerical stability and helps prevent the solution from diverging. For safety, I set my timestep to be a quarter of this value, so I was sufficiently far from breaking the condition. The numerical stability in this simulation is particularly important, since the program implentation deals with numbers that are both extremely large (neutron density per cubic meter) and extremely small (timestep in nanoseconds). The machine precision of floating point numbers in python by default is
+      roughly 17 digits \cite{Python-Floating-Point-Error}, so we need to be careful that our small timesteps and large densities don't cause a propagation of error from the floating point precision. Since our implentation needs to loop over 3-spatial and 1 temporal dimension, the number of iterations can also propagate the error. Ensuring that our finite difference method has as little error as possible was of key importance. The diffusion-3d implentation has an error propagation of $\mathcal{O} (\delta t + \delta x^2)$.\\
+
+   \section{   Discussion and Ideas for Extension}
+
+      There are a few key points that need to be discussed about the implementation, as well as two future extensions to the project which may help make the simulation more accurate. The first hurdle I had to deal with when designing the diffusion reaction was the fuel rods themselves. The fuel rods are initialized as a class and and then inserted into the simulation grid. But the simulation grid does not know which fuel rod is which, it only knows that there are now source terms present in its initial conditions before it begins to be diffused. When the objects are placed into the grid, the grid sees them as hundreds of tiny fuel sources that are located as close together as possible in the grid. When the diffusion occurs, the program sees that two sources that each produce neutrons are close together, so the flux between them is high, and declares that the system should explode. This means that the individual fuel rods would blow up immediately when the first timestep occurs, regardless of separation between the two fuel rods, regardless of shape, and regardless of size and density. To fix this, I needed to find a way to diffuse the neutrons, but only have the neutrons react if they came from opposing fuel rods within the grid. To do this, I took a slice of the grid near the center where the neutrons from both sources would initially meet eachother for the first time, and allowed the neutrons within that region to react. This ensures that the point sources that make up the fuel rods will not cause the system to explode. However, this implementation does not account for the fact that neutrons in the same central region of the grid that are from the same fuel source can now multiply with eachother. While there is nothing stopping this from happening in reality, it happens much more throughout the simulation than is physically reasonable. An implementation to try in the future would be to make the fuel rod sources Tuples, and assign each grid point a value (density) and an identifier specifying which neutron source it was emitted from. Only neutrons with opposing identifiers or created neutrons from the reaction would be allowed to multiply. This will not be straightforward to implement however since you would then also need to keep track over every neutron in the reaction, and since there are many of them, you can run into memory issues. \\
+
+      The second extension to this project that could help preserve more physics would be to implement a moving fuel source. Inside of an atomic bomb, the detonation and violent reaction occurs when the fuel rods are smashed together. To simulate this in my project, I simulated the diffusion at each spatial distance until the rods were colliding together to give a picture of how it would behave. This however does not account for the fact that the neutrons emitted from the fuel sources would leave a streak or comet trail behind the objects as the move together, and slightly changes the density distribution in the diffusion reaction process. To fix this, I will implement a vector field containing vector data for the fuel rods, and set them to move closer together until they have collided. This would require implementing a \textit{Material Derivative} instead of a \textit{Diffusion Reaction} equation, which behaves similarly but has an additional velocity term. This would be difficult to implement since it would require another 3D array in memory which contains the vector information at each point in the grid, and would be updated at each timestep. It would also require collision detection between the two fuel rod sources, and the complexity of such a simulation has been discussed to be outside the scope of this course. \\
+
+      Both extensions to the project would require additional memory management, and would reduce the simulation time of the program, but have the possibility of adding more physical realism to the simulation. 
+
+    
+   \newpage
+   \pagenumbering{arabic}
+   \vspace{-0.5cm}
+   \bibliographystyle{ieeetr}
+   \bibliography{report-citations}
 \end{document}

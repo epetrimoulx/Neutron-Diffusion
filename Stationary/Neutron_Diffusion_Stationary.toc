@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {I.} Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {II.} Background}{2}{section.2}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax A.}What is Diffusion?}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax B.}History}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax C.}The Diffusion-Reaction Equation}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {III.} Neutron Diffusion Reaction}{4}{section.3}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax A.}Choosing a material}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax B.}Small scale diffusion-reaction}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax C.}The effects of fuel rod shape on the energy output}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax D.}Decaying, stable, and exponential neutron release}{5}{subsection.3.4}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax E.}Dirichlet vs. Neumann boundary conditions}{6}{subsection.3.5}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax F.}Comparison to the analytic cubic fuel rod solution}{7}{subsection.3.6}%
+\contentsline {section}{\numberline {IV.} Methods}{7}{section.4}%
+\contentsline {section}{\numberline {V.} Discussion and Ideas for Extension}{9}{section.5}%
