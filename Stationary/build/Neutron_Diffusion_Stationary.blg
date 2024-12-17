@@ -7,36 +7,36 @@ Reallocating 'name_of_file' (item size: 1) to 17 items.
 Database file #1: report-citations.bib
 Warning--I'm ignoring Nuclear_Power_2021's extra "title" field
 --line 35 of file report-citations.bib
-You've used 9 entries,
+You've used 10 entries,
             1876 wiz_defined-function locations,
-            530 strings with 4457 characters,
-and the built_in function-call counts, 1443 in all, are:
-= -- 129
-> -- 41
+            536 strings with 4576 characters,
+and the built_in function-call counts, 1559 in all, are:
+= -- 141
+> -- 42
 < -- 0
-+ -- 19
++ -- 20
 - -- 10
-* -- 85
-:= -- 180
-add.period$ -- 7
-call.type$ -- 9
-change.case$ -- 9
+* -- 90
+:= -- 193
+add.period$ -- 9
+call.type$ -- 10
+change.case$ -- 10
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 60
-empty$ -- 183
+cite$ -- 10
+duplicate$ -- 64
+empty$ -- 201
 format.name$ -- 10
-if$ -- 372
+if$ -- 404
 int.to.chr$ -- 0
-int.to.str$ -- 9
+int.to.str$ -- 10
 missing$ -- 2
-newline$ -- 30
+newline$ -- 34
 num.names$ -- 4
-pop$ -- 52
+pop$ -- 60
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 66
+skip$ -- 68
 stack$ -- 0
 substring$ -- 56
 swap$ -- 18
@@ -46,6 +46,6 @@ top$ -- 0
 type$ -- 0
 warning$ -- 0
 while$ -- 8
-width$ -- 10
-write$ -- 64
+width$ -- 12
+write$ -- 72
 (There was 1 warning)

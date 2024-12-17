@@ -173,7 +173,7 @@
          The choice of these materials is carefully chosen, based on these two factors. While it is true that larger nuclei require much less energy to break apart, the reason that we do not use even larger elements such as Americium is because they have larger absorption cross sections than their fission cross section. This means that their reactions are almost always sub-critical because the amount of neutrons absorbed is much greater than that in which they are able to produce during fission \cite{article} It just so happens that Uranium and Plutonium isotopes do not have this feature, and their fission cross section is much larger than their absorption. We do not have an interest in using smaller atoms such as iron either, since they are extremely stable on their own, and require more energy to break apart than they release. According to K. Hirano, M. Cohen, and B.L. Averbach, the diffusion constant of paramagnetic alpha iron above $800^\circ C$ is only $1.3 \exp(-56000 / RT)$ \cite{Hirano_Cohen_Averbach_1961}, where $R$ is the universal gas constant, and T is the absolute temperature in Kelvin \cite{6.2.3.1_2013}. The $RT$ term represents the average kinetic energy of the material. If we use $800^\circ C$ as our starting point we see that the diffusion constant in paramagnetic alpha iron is:
 
          \begin{align}
-            D = 1.3\exp(-56000 / 8.314 \text{J/mol} 1073.15 \text{K}) \longrightarrow D = 0.0024 m^2/s
+            D = 1.3\exp \left(\frac{-56000}{ 8.314 \text{ J/mol } 1073.15 \text{K}}\right) \longrightarrow D = 0.0024 m^2/s
          \end{align}
 
          So we definitely do not want to use Iron in our reaction! It would require us to heat up the iron to more than $800^\circ C$ before there was even the smallest amount of diffusion, that the energy consumed is much more than that produced. \\
@@ -214,9 +214,153 @@
             \eqlabel{Chemistry}
          \end{equation}
 
+         Making the fuel rods a bit larger, I can calculate the energy release for two 1cm cubes. 
+
+         \begin{figure}
+            \centering
+            \includegraphics[width=0.23\linewidth]{Images/1cm-Source-1.png}
+            \includegraphics[width=0.23\linewidth]{Images/1cm-Source-2.png}
+            \includegraphics[width=0.23\linewidth]{Images/1cm-Source-3.png}
+            \includegraphics[width=0.23\linewidth]{Images/1cm-Source-4.png}
+            \caption{Images of diffusion of the small diffusion of two 1cm Plutonium Cubes.}
+            \label{img:1cm-Plutonium}
+         \end{figure}
+
+         As shown in figure \ref{img:1cm-Plutonium} we can see that the number of neutrons is growing. This is highlighted better in the neutron density over time graph shown in figure \ref{img:1cm-Plutonium-Graph}. We can see here that fission is occurring in the simulation and energy is being emitted. Calculating the energy release again with equation \eqref{eq:Energy} we calculate that this time, $5.88 \times 10^6$ J are released. Comparing this with equation \eqref{eq:Chemistry} like we did for the 1mm cubes, we can see that this is equivalent to heating up a 250mL cup of water by $5619.6^\circ C$! This is too high to be a reasonable comparison, so lets move on to a comparison that is a little bit more fun.\\
+
+         Explosions are measured in terms of kilograms of TNT. Shown below is a formula we can use to relate the amount of energy in Joules released, to the amount of TNT the explosion is equivalent to:
+
+         \begin{equation}
+            \frac{E}{4.184 \times 10^9 \text{J/ton of TNT}} = \text{tons of TNT}
+            \eqlabel{Tons-of-TNT}
+         \end{equation}
+
+         Using this formula \eqref{eq:Tons-of-TNT} with our  $5.88 \times 10^6$ J of released energy, we find that using 2 cubes of Plutonium-239 that have length of 1cm is equivalent to the explosive power of $1.4 \times 10^{-3}$ tons of TNT. Equivalently, this is $1.4$kg of TNT. So we have made a small explosion, but nothing that will be anywheres close to the orders of magnitude of a traditional nuclear weapon. So while the fission process is possible for even 1 Uranium atom theoretically, we can safely say that unless you have around two 1cm by 1cm by 1cm cubes of Uranium, nothing meaningful will happen on a human scale, unless you want to heat up your cup of coffee.
+
+         \begin{figure}[b!]
+            \centering
+            \includegraphics[width=0.4\linewidth]{Graphs/1cm-Cube.png}
+            \caption{Graph depicting the average number of neutrons over time for two 1cm cubes. Notice that the growth is still exponential, but the total density is still several orders of magnitude lower than the usual simulations.}
+            \label{img:1cm-Plutonium-Graph}
+         \end{figure}
+
       \subsection{The effects of fuel rod shape on the energy output}
+         In this section I will investigate how the shapes of the fuel rods can affect the energy output. I will be mainly utilizing equation \eqref{eq:Tons-of-TNT} to make these comparisons and relate the output to known values. We can expect the energy output of these systems to be much larger than normal reactions however, since our fuel rods are significantly bigger than any reactor constructed before. In order to help with the comparison, I will compare the output to the explosions of the TSAR Bomba, the largest nuclear warhead ever detonated in human history.\\
+
+         The TSAR Bomba was a thermonuclear aerial bomb developed and tested by the Soviets in 1961. The explosion is estimated to have yielded around 58 Mega-Tons of TNT, or around 243 PJ. If the weapon had a slightly larger deposit of Uranium in the warhead, it was predicted to have been capable of releaseing over 100 Mega-Tons of TNT, or around 418 PJ. The Uranium deposit was lessened in order to reduce the amount of fallout radiation from the explosion \cite{TSAR-BOMBA}.\\
+
+         So far we have analyzed the energy output of 2 Cubes of Uranium-235 and Plutonium-239. For this segment we will investigate the dependance of shape of fuel rods on the energy output of the system for Uranium fuel rods only. This is just to keep the numbers a bit more reasonable since the scale of our simulation is very large. We can create the Uranium Fuel rods using an object class, and calculate their volumes and neutron densities before placing them into the simulation grid. To do so, we just fill a 3D box with neutrons in the desired shape. This doesn't give us a perfectly accurate shape, but increasing the size of the box as well as the spatial step in the simulation can lead to more accurate shape construction. We will start with the case of a sphere and a hemisphere colliding, as depicted in figure \ref{img:Sphere-and-Hemisphere}.\\
+
+         Analyzing the images of the neutron density over time for the far apart fuel rods (20m separation) as well as the images of the neutron density for the rods that are close together (8m separation) \ref{img:Sphere-and-hemisphere-density}, we can see that the energy production increases dramatically as the separation decreases. Calculating the energy release with equation \eqref{eq:Energy} we can see that the energy emitted from the reaction of the two spherical and hemispherical rods releases $1.11 \times 10^{13}$ J, and when brought closer together to the 8m separation distance, emit $5.41 \times 10^{17}$ J. This is equivalent to 129 Million tons of TNT, or about the size of 2 TSAR Bombas. 
+
+         \begin{figure}
+            \centering
+            \includegraphics[width=0.4\linewidth]{Graphs/Sphere-and-Hemisphere-Far.png}
+            \includegraphics[width=0.4\linewidth]{Graphs/Sphere-and-Hemisphere-Close.png}
+            \caption{Image of Colliding spherical fuel rod and hemisphericalfuel rod in the simulation grid.}
+            \label{img:Sphere-and-Hemisphere}
+         \end{figure}
+
+         \begin{figure}
+            \centering
+            \includegraphics[width=0.4\linewidth]{Graphs/Sphere-and-Hemisphere-Far-Density.png}
+            \includegraphics[width=0.4\linewidth]{Graphs/Sphere-and-Hemisphere-Close-Density.png}
+            \caption{Image of neutron density over time for the spherical and hemisphereical fuel rods.}
+            \label{img:Sphere-and-hemisphere-density}
+         \end{figure}
+
+         \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.22\linewidth]{Images/Sphere-and-Hemisphere-Far-1.png}
+            \includegraphics[width=0.22\linewidth]{Images/Sphere-and-Hemisphere-Far-2.png}
+            \includegraphics[width=0.22\linewidth]{Images/Sphere-and-Hemisphere-Far-3.png}
+            \includegraphics[width=0.22\linewidth]{Images/Sphere-and-Hemisphere-Far-4.png}\\
+            \includegraphics[width=0.22\linewidth]{Images/Sphere-and-Hemisphere-Close-1.png}
+            \includegraphics[width=0.22\linewidth]{Images/Sphere-and-Hemisphere-Close-2.png}
+            \includegraphics[width=0.22\linewidth]{Images/Sphere-and-Hemisphere-Close-3.png}
+            \includegraphics[width=0.22\linewidth]{Images/Sphere-and-Hemisphere-Close-4.png}
+            \caption{Image of spatial distribution of neutron density for the Spherical and Hemi-Spherical rods. The distribution of neutron density for the 20m separation (Top) and the distribution of neutron density for the 8m separation (below)}
+            \label{img:Sphere-and-hemisphere-images}
+         \end{figure}
+
+         I will test one more combination of shapes, considering a Triangular prism and a cylinder interacting with one another. There are several combinations to be tested here, but to keep this sectino short and not clutter the report with images, the 2 cases other than the colliding cubes will be the only discussed here. For more combinations to test, refer to the code written within the submitted Jupyter Notebook. \\
+
+         \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.4\linewidth]{Graphs/Cylinder-Prism-Far-Grid.png}
+            \includegraphics[width=0.4\linewidth]{Graphs/Cylinder-Prism-Close-Grid.png}
+            \caption{Image of Colliding Triangular Prism and Cylindrical shaped fuel rod in the simulation grid.}
+            \label{img:Prism-and-Cylinder}
+         \end{figure}
+
+         \begin{figure}[b!]
+            \centering
+            \includegraphics[width=0.4\linewidth]{Graphs/Cylinder-Prism-Far-Graph.png}
+            \includegraphics[width=0.4\linewidth]{Graphs/Cylinder-Prism-Close-Graph.png}
+            \caption{Image of neutron density over time for the Triangular Prism and Cylindrical fuel rods.}
+            \label{img:Prism-and-Cylinder-density}
+         \end{figure}
+
+         \begin{figure}
+            \centering
+            \includegraphics[width=0.22\linewidth]{Images/Cylinder-Prism-Far-1.png}
+            \includegraphics[width=0.22\linewidth]{Images/Cylinder-Prism-Close-2.png}
+            \includegraphics[width=0.22\linewidth]{Images/Cylinder-Prism-Far-3.png}
+            \includegraphics[width=0.22\linewidth]{Images/Cylinder-Prism-Far-4.png}\\
+            \includegraphics[width=0.22\linewidth]{Images/Cylinder-Prism-Close-1.png}
+            \includegraphics[width=0.22\linewidth]{Images/Cylinder-Prism-Close-2.png}
+            \includegraphics[width=0.22\linewidth]{Images/Cylinder-Prism-Close-3.png}
+            \includegraphics[width=0.22\linewidth]{Images/Cylinder-Prism-Close-4.png}
+            \caption{Image of spatial distribution of neutron density for the Triangular Prism and Cylinder shaped rods. The distribution of neutron density for the 25m separation (Top) and the distribution of neutron density for the 5m separation (below)}
+            \label{img:Prism-and-Cylinder-Images}
+         \end{figure}
+
+         Starting with a further separation distance of 30m between the objects, we can see from figure \ref{img:Prism-and-Cylinder-density} that the fuel rods are exhibiting a decay. The neutrons are being absorbed on the boundaries and the system is losing energy. This is shown graphically in the spatial plots of neutron density shown in \ref{img:Prism-and-Cylinder-Images}. Bringing the fuel rods closer together to a separation distance of 10m we can see that the reaction goes super-critical very quickly, and referring to equation \eqref{eq:Energy} once more, we see that $1.35 \times 10^{17}$ J of energy are released. This is equivalent to $32.3$ million tons of TNT, or about the same size as 2 detonations of \textit{Castle Bravo}, the largest nuclear test ever conducted by the United States. Castle Bravo was a thermonuclear bomb, and not a fission bomb, but due to the scale of our simulation, it makes a good comparison. Images from Castle Bravo can be seen in figure \ref{Castle-Bravo}.\\
+
+         Now lets compare this to the energy output of the Cubes of Uranium that collide in figure \ref{URANIUM-EXPLOSION-GRID}. Looking at the density of neutrons before, we can see that the cubes exhibit an exponential decay, but as the rods are brought closer together to a separation of 10m, the reaction quickly becomes more violent than any weapon ever produced \ref{URANIUM-GRAPH-DENSITY}. This can be shown visually in the spatial distribution graphs shown in figure \ref{BOOM-BOOM-GRAPH}, as well as with the calculation of its energy release. When the fuel rods are brought close together, the energy released in the fission reaction is $3.24 \times 10^{19}$ J. To put this into perspective, this is equivalent to 7.7 billion tons of TNT. This is approximately 7700 Mega Tons of TNT, or  152 TSAR Bomba's detonating at once. This is an unfathomable amount of energy. \\
+
+         We can say safely that the Cube approach definitely yields the highest energy output. Thinking about this mathemtically, we know that the largest surface area that can be constructed on a flat surface given an amount of material is always a square. Thus, the largest possible area to be constructed should allow for the largest amount of flux to leave the surface and travel towards the other diffusing neutrons from the opposing cube. Having the greatest possible amount of diffusable material to react, leads to the largest amount of energy consumption.\\
+
+         You may be wondering why I didn't use Plutonium-239 for this section of the report. The simple answer is that our numbers are already very large, and the system requires very large fuel rods, so including plutonium would make the answer large enough that there wouldn't really be anything to compare it to, other than maybe the asteroid that killed off the dinosaurs 66 million years ago. \footnote{I did however calculate this for fun with the program I wrote. The asteroid that killed the dinosaurs is estimated to be equal to roughly 100 million megatons of TNT. The Plutonium Cube bomb I have constructed would be 10,000 times larger! This is enough to probably destroy the Earth.}
+
+
+         \begin{figure}
+            \centering
+            \includegraphics[width=0.4\linewidth]{Graphs/URANIUM-DECAY-GRAPH.png}
+            \includegraphics[width=0.4\linewidth]{Graphs/URANIUM-GROWTH-GRAPH.png}
+            \caption{Image of neutron density over time for the colliding cubes of Plutonium-239.}
+            \label{URANIUM-GRAPH-DENSITY}
+         \end{figure}
+
+         \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.3\linewidth]{Graphs/Graph_FuelRodsInGrid.png}
+            \includegraphics[width=0.3\linewidth]{Graphs/Graph_FuelRodInGrid_Middle.png}
+            \includegraphics[width=0.3\linewidth]{Graphs/GraphFuelRodInGrid_Close.png}
+            \caption{Images of the Plutonium-239 fuel rods moving closer together in the simulation grid}
+            \label{URANIUM-EXPLOSION-GRID}
+         \end{figure}
+
+         \begin{figure}
+            \centering
+            \includegraphics[width=0.22\linewidth]{Images/BOOM-BOOM-1.png}
+            \includegraphics[width=0.22\linewidth]{Images/BOOM-BOOM-2.png}
+            \includegraphics[width=0.22\linewidth]{Images/BOOM-BOOM-3.png}
+            \includegraphics[width=0.22\linewidth]{Images/BOOM-BOOM-4.png}
+            \caption{Image of spatial distribution of neutron density for the Plutonium-239 Cubes.}
+            \label{BOOM-BOOM-GRAPH}
+         \end{figure}
+
+         \begin{figure}[t!]
+            \centering
+            \includegraphics[width=0.24\linewidth]{Images/Castle Bravo.jpg}
+            \includegraphics[width=0.336\linewidth]{Images/Castle-Bravo-Bomb.jpg}
+            \caption{Images of the Castle Bravo Bomb. Castle Bravo was detonated on March 1st 1954 in Bikini Atoll. The device nuclear device is depicted on the right.}
+            \label{Castle-Bravo}
+         \end{figure}
+   
       \subsection{Decaying, stable, and exponential neutron release}
-         So far, I have shown that as the fuel rods get closer together, they eventually reach a point where the regions of interfereing flux make the production of neutrons an exponential growth instead of decay. In this section I will investigate where exactly this happens, for both he Uranium-235 case with Dirichlet boundaries, and the Plutonium Case with Dirichlet boundaries. Dirichlet boundaries are being considered here instead of Neumann boundaries since we only really care about the neutrons interacting in the center of the grid, and keeping the neutrons on the boundaries just increases the density of neutrons everywhere making it harder to analyze the criticality condition.\\
+         So far, I have shown that as the fuel rods get closer together, they eventually reach a point where the regions of interfereing flux make the production of neutrons an exponential growth instead of decay. I have also shown the minimum size the fuel rods can be in order to produce meaningful amounts of energy is about 10mm. In this section I will investigate where exactly the growth rate flips from a decay into a growth for both he Uranium-235 case with Dirichlet boundaries, and the Plutonium Case with Dirichlet boundaries. Dirichlet boundaries are being considered here instead of Neumann boundaries since we only really care about the neutrons interacting in the center of the grid, and keeping the neutrons on the boundaries just increases the density of neutrons everywhere making it harder to analyze the criticality condition.\\
 
          Starting in a region between a separation distance of 20 and 30, we can move the blocks slightly farther and farther away from one another until we no longer go critical. This will give us a close approximation of how far apart they need to be.
 
@@ -302,8 +446,6 @@
             \caption{Average neutron density over time for the Neumann Boundary Conditions at a separation distance of 25m, 20m, and 10m}
             \label{img:Neumann_Cubes}
          \end{figure}
-
-      \subsection{Comparison to the analytic cubic fuel rod solution}
 
     \section{  Methods}
       In order to simulate the neutron diffusion process for various materials and shapes I used a 6 point stencil in 3D space to calculate the Laplacian using a finite difference method. The method was adapted from the \textit{diffusion-2d} method developed in class. In order to determine the appropriate time step size to ensure numerical stability, I implemented a CFL condition dependant on the grid spacing and diffusion constant. The Satisfied CFL condition is written mathematically below:

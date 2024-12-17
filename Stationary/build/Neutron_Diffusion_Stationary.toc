@@ -6,9 +6,8 @@
 \contentsline {section}{\numberline {III.} Neutron Diffusion Reaction}{4}{section.3}%
 \contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax A.}Choosing a material}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax B.}Small scale diffusion-reaction}{6}{subsection.3.2}%
-\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax C.}The effects of fuel rod shape on the energy output}{7}{subsection.3.3}%
-\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax D.}Decaying, stable, and exponential neutron release}{7}{subsection.3.4}%
-\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax E.}Dirichlet vs. Neumann boundary conditions}{8}{subsection.3.5}%
-\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax F.}Comparison to the analytic cubic fuel rod solution}{10}{subsection.3.6}%
-\contentsline {section}{\numberline {IV.} Methods}{10}{section.4}%
-\contentsline {section}{\numberline {V.} Discussion and Ideas for Extension}{11}{section.5}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax C.}The effects of fuel rod shape on the energy output}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax D.}Decaying, stable, and exponential neutron release}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {\hbox {}\hskip 1em\relax E.}Dirichlet vs. Neumann boundary conditions}{15}{subsection.3.5}%
+\contentsline {section}{\numberline {IV.} Methods}{16}{section.4}%
+\contentsline {section}{\numberline {V.} Discussion and Ideas for Extension}{17}{section.5}%

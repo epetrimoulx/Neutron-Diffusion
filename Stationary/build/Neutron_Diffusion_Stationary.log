@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  17 DEC 2024 01:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2022.12.13)  17 DEC 2024 12:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -967,7 +967,7 @@ Overfull \hbox (1.95854pt too wide) detected at line 6
  []
 
 
-Overfull \hbox (1.34741pt too wide) detected at line 13
+Overfull \hbox (1.34741pt too wide) detected at line 12
 \OT1/cmr/bx/n/12 IV. 
  []
 
@@ -990,7 +990,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
 
-<Images/Nuclear_Power_Plant.jpg, id=78, 2007.5pt x 1340.00626pt>
+<Images/Nuclear_Power_Plant.jpg, id=76, 2007.5pt x 1340.00626pt>
 File: Images/Nuclear_Power_Plant.jpg Graphic file (type jpg)
 <use Images/Nuclear_Power_Plant.jpg>
 Package pdftex.def Info: Images/Nuclear_Power_Plant.jpg  used on input line 74.
@@ -1025,17 +1025,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]
-<Images/Trinity_Test.jpg, id=110, 183.68625pt x 276.03125pt>
+<Images/Trinity_Test.jpg, id=108, 183.68625pt x 276.03125pt>
 File: Images/Trinity_Test.jpg Graphic file (type jpg)
 <use Images/Trinity_Test.jpg>
 Package pdftex.def Info: Images/Trinity_Test.jpg  used on input line 113.
 (pdftex.def)             Requested size: 126.47249pt x 190.05742pt.
-<Images/Trinity_Bomb.jpg, id=111, 256.96pt x 256.96pt>
+<Images/Trinity_Bomb.jpg, id=109, 256.96pt x 256.96pt>
 File: Images/Trinity_Bomb.jpg Graphic file (type jpg)
 <use Images/Trinity_Bomb.jpg>
 Package pdftex.def Info: Images/Trinity_Bomb.jpg  used on input line 114.
 (pdftex.def)             Requested size: 190.36488pt x 190.36699pt.
-<Images/Trinity_Tower.jpg, id=112, 1405.25pt x 1787.67876pt>
+<Images/Trinity_Tower.jpg, id=110, 1405.25pt x 1787.67876pt>
 File: Images/Trinity_Tower.jpg Graphic file (type jpg)
 <use Images/Trinity_Tower.jpg>
 Package pdftex.def Info: Images/Trinity_Tower.jpg  used on input line 115.
@@ -1053,7 +1053,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [3 <./Images/Trinity_Test.jpg> <./Images/Trinity_Bomb.jpg> <./Images/Trinity_Tower.jpg>]
-<Graphs/Graph_FuelRodsInGrid.png, id=119, 294.1389pt x 302.0886pt>
+<Graphs/Graph_FuelRodsInGrid.png, id=117, 294.1389pt x 302.0886pt>
 File: Graphs/Graph_FuelRodsInGrid.png Graphic file (type png)
 <use Graphs/Graph_FuelRodsInGrid.png>
 Package pdftex.def Info: Graphs/Graph_FuelRodsInGrid.png  used on input line 147.
@@ -1075,7 +1075,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
-<Graphs/Americium-Graph.png, id=131, 389.95688pt x 268.75406pt>
+<Graphs/Americium-Graph.png, id=129, 389.95688pt x 268.75406pt>
 File: Graphs/Americium-Graph.png Graphic file (type png)
 <use Graphs/Americium-Graph.png>
 Package pdftex.def Info: Graphs/Americium-Graph.png  used on input line 168.
@@ -1092,7 +1092,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--180
 
  []
 
-<Graphs/Small-Simulation.png, id=148, 294.1389pt x 302.0886pt>
+<Graphs/Small-Simulation.png, id=146, 294.1389pt x 302.0886pt>
 File: Graphs/Small-Simulation.png Graphic file (type png)
 <use Graphs/Small-Simulation.png>
 Package pdftex.def Info: Graphs/Small-Simulation.png  used on input line 187.
@@ -1100,22 +1100,22 @@ Package pdftex.def Info: Graphs/Small-Simulation.png  used on input line 187.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Images/Small-Source-1.png, id=149, 445.665pt x 393.72093pt>
+<Images/Small-Source-1.png, id=147, 445.665pt x 393.72093pt>
 File: Images/Small-Source-1.png Graphic file (type png)
 <use Images/Small-Source-1.png>
 Package pdftex.def Info: Images/Small-Source-1.png  used on input line 194.
 (pdftex.def)             Requested size: 116.35252pt x 102.79156pt.
-<Images/Small-Source-2.png, id=150, 446.41782pt x 392.96812pt>
+<Images/Small-Source-2.png, id=148, 446.41782pt x 392.96812pt>
 File: Images/Small-Source-2.png Graphic file (type png)
 <use Images/Small-Source-2.png>
 Package pdftex.def Info: Images/Small-Source-2.png  used on input line 195.
 (pdftex.def)             Requested size: 116.35252pt x 102.42113pt.
-<Images/Small-Source-3.png, id=151, 462.22687pt x 406.51875pt>
+<Images/Small-Source-3.png, id=149, 462.22687pt x 406.51875pt>
 File: Images/Small-Source-3.png Graphic file (type png)
 <use Images/Small-Source-3.png>
 Package pdftex.def Info: Images/Small-Source-3.png  used on input line 196.
 (pdftex.def)             Requested size: 116.35252pt x 102.33037pt.
-<Images/Small-Source-4.png, id=152, 457.71pt x 402.75468pt>
+<Images/Small-Source-4.png, id=150, 457.71pt x 402.75468pt>
 File: Images/Small-Source-4.png Graphic file (type png)
 <use Images/Small-Source-4.png>
 Package pdftex.def Info: Images/Small-Source-4.png  used on input line 197.
@@ -1123,11 +1123,26 @@ Package pdftex.def Info: Images/Small-Source-4.png  used on input line 197.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-
- []
-
+<Images/1cm-Source-1.png, id=153, 457.71pt x 411.03563pt>
+File: Images/1cm-Source-1.png Graphic file (type png)
+<use Images/1cm-Source-1.png>
+Package pdftex.def Info: Images/1cm-Source-1.png  used on input line 221.
+(pdftex.def)             Requested size: 116.35252pt x 104.48341pt.
+<Images/1cm-Source-2.png, id=154, 460.72125pt x 408.02437pt>
+File: Images/1cm-Source-2.png Graphic file (type png)
+<use Images/1cm-Source-2.png>
+Package pdftex.def Info: Images/1cm-Source-2.png  used on input line 222.
+(pdftex.def)             Requested size: 116.35252pt x 103.03934pt.
+<Images/1cm-Source-3.png, id=155, 451.6875pt x 408.77719pt>
+File: Images/1cm-Source-3.png Graphic file (type png)
+<use Images/1cm-Source-3.png>
+Package pdftex.def Info: Images/1cm-Source-3.png  used on input line 223.
+(pdftex.def)             Requested size: 116.35252pt x 105.30028pt.
+<Images/1cm-Source-4.png, id=156, 462.22687pt x 408.77719pt>
+File: Images/1cm-Source-4.png Graphic file (type png)
+<use Images/1cm-Source-4.png>
+Package pdftex.def Info: Images/1cm-Source-4.png  used on input line 224.
+(pdftex.def)             Requested size: 116.35252pt x 102.89886pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1136,45 +1151,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6]
-<Graphs/Criticality-Test-U235-25m.png, id=166, 422.0568pt x 328.8285pt>
-File: Graphs/Criticality-Test-U235-25m.png Graphic file (type png)
-<use Graphs/Criticality-Test-U235-25m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-U235-25m.png  used on input line 225.
-(pdftex.def)             Requested size: 151.76854pt x 118.24269pt.
-<Graphs/Criticality-Test-U235-27m.png, id=167, 416.2752pt x 328.8285pt>
-File: Graphs/Criticality-Test-U235-27m.png Graphic file (type png)
-<use Graphs/Criticality-Test-U235-27m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-U235-27m.png  used on input line 226.
-(pdftex.def)             Requested size: 151.76854pt x 119.88844pt.
-<Graphs/Criticality-Test-U235-28m.png, id=168, 422.0568pt x 328.8285pt>
-File: Graphs/Criticality-Test-U235-28m.png Graphic file (type png)
-<use Graphs/Criticality-Test-U235-28m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-U235-28m.png  used on input line 227.
-(pdftex.def)             Requested size: 151.76854pt x 118.24269pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
-
- []
-
-<Graphs/Criticality-Test-Pu-239-31m.png, id=170, 416.2752pt x 328.8285pt>
-File: Graphs/Criticality-Test-Pu-239-31m.png Graphic file (type png)
-<use Graphs/Criticality-Test-Pu-239-31m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-Pu-239-31m.png  used on input line 236.
-(pdftex.def)             Requested size: 227.64894pt x 179.82764pt.
-<Graphs/Criticality-Test-Pu-239-36m.png, id=171, 409.7709pt x 328.8285pt>
-File: Graphs/Criticality-Test-Pu-239-36m.png Graphic file (type png)
-<use Graphs/Criticality-Test-Pu-239-36m.png>
-Package pdftex.def Info: Graphs/Criticality-Test-Pu-239-36m.png  used on input line 237.
-(pdftex.def)             Requested size: 227.64894pt x 182.6826pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
@@ -1186,106 +1163,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7 <./Graphs/Small-Simulation.png> <./Images/Small-Source-1.png> <./Images/Small-Source-2.png> <./Images/Small-Source-3.png> <./Images/Small-Source-4.png>]
+<Graphs/1cm-Cube.png, id=187, 416.2752pt x 328.8285pt>
+File: Graphs/1cm-Cube.png Graphic file (type png)
+<use Graphs/1cm-Cube.png>
+Package pdftex.def Info: Graphs/1cm-Cube.png  used on input line 242.
+(pdftex.def)             Requested size: 202.3529pt x 159.8479pt.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[8 <./Graphs/Criticality-Test-U235-25m.png> <./Graphs/Criticality-Test-U235-27m.png> <./Graphs/Criticality-Test-U235-28m.png> <./Graphs/Criticality-Test-Pu-239-31m.png> <./Graphs/Criticality-Test-Pu-239-36m.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
-File: Graphs/Graph_FuelRodsInGrid.png Graphic file (type png)
-<use Graphs/Graph_FuelRodsInGrid.png>
-Package pdftex.def Info: Graphs/Graph_FuelRodsInGrid.png  used on input line 265.
-(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
-<Graphs/Graph_FuelRodInGrid_Middle.png, id=197, 294.1389pt x 302.0886pt>
-File: Graphs/Graph_FuelRodInGrid_Middle.png Graphic file (type png)
-<use Graphs/Graph_FuelRodInGrid_Middle.png>
-Package pdftex.def Info: Graphs/Graph_FuelRodInGrid_Middle.png  used on input line 266.
-(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
-<Graphs/GraphFuelRodInGrid_Close.png, id=198, 294.1389pt x 302.0886pt>
-File: Graphs/GraphFuelRodInGrid_Close.png Graphic file (type png)
-<use Graphs/GraphFuelRodInGrid_Close.png>
-Package pdftex.def Info: Graphs/GraphFuelRodInGrid_Close.png  used on input line 267.
-(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
-<Graphs/DirichletCubes_Density_Vs_Time_Far.png, id=199, 422.0568pt x 328.8285pt>
-File: Graphs/DirichletCubes_Density_Vs_Time_Far.png Graphic file (type png)
-<use Graphs/DirichletCubes_Density_Vs_Time_Far.png>
-Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Far.png  used on input line 274.
-(pdftex.def)             Requested size: 161.8885pt x 126.13022pt.
-<Graphs/DirichletCubes_Density_Vs_Time_Middle.png, id=200, 409.7709pt x 328.8285pt>
-File: Graphs/DirichletCubes_Density_Vs_Time_Middle.png Graphic file (type png)
-<use Graphs/DirichletCubes_Density_Vs_Time_Middle.png>
-Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Middle.png  used on input line 275.
-(pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
-<Graphs/DirichletCubes_Density_Vs_Time_Close.png, id=201, 409.7709pt x 328.8285pt>
-File: Graphs/DirichletCubes_Density_Vs_Time_Close.png Graphic file (type png)
-<use Graphs/DirichletCubes_Density_Vs_Time_Close.png>
-Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Close.png  used on input line 276.
-(pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
-<Images/Dirichlet-25m-Image.png, id=202, 459.96844pt x 410.2828pt>
-File: Images/Dirichlet-25m-Image.png Graphic file (type png)
-<use Images/Dirichlet-25m-Image.png>
-Package pdftex.def Info: Images/Dirichlet-25m-Image.png  used on input line 283.
-(pdftex.def)             Requested size: 126.47249pt x 112.81247pt.
-<Images/Dirichlet-20m-Image.png, id=203, 455.45157pt x 411.78844pt>
-File: Images/Dirichlet-20m-Image.png Graphic file (type png)
-<use Images/Dirichlet-20m-Image.png>
-Package pdftex.def Info: Images/Dirichlet-20m-Image.png  used on input line 284.
-(pdftex.def)             Requested size: 126.47249pt x 114.3449pt.
-<Images/Dirichlet-10m-Image.png, id=204, 456.95718pt x 402.75468pt>
-File: Images/Dirichlet-10m-Image.png Graphic file (type png)
-<use Images/Dirichlet-10m-Image.png>
-Package pdftex.def Info: Images/Dirichlet-10m-Image.png  used on input line 285.
-(pdftex.def)             Requested size: 126.47249pt x 111.46768pt.
-<Images/Neumann-25m-Image.png, id=205, 460.72125pt x 408.02437pt>
-File: Images/Neumann-25m-Image.png Graphic file (type png)
-<use Images/Neumann-25m-Image.png>
-Package pdftex.def Info: Images/Neumann-25m-Image.png  used on input line 286.
-(pdftex.def)             Requested size: 126.47249pt x 112.0047pt.
-<Images/Neumann-20m-Image.png, id=206, 457.71pt x 405.01312pt>
-File: Images/Neumann-20m-Image.png Graphic file (type png)
-<use Images/Neumann-20m-Image.png>
-Package pdftex.def Info: Images/Neumann-20m-Image.png  used on input line 287.
-(pdftex.def)             Requested size: 126.47249pt x 111.90733pt.
-<Images/Neumann-10m-Image.png, id=207, 448.67625pt x 404.26031pt>
-File: Images/Neumann-10m-Image.png Graphic file (type png)
-<use Images/Neumann-10m-Image.png>
-Package pdftex.def Info: Images/Neumann-10m-Image.png  used on input line 288.
-(pdftex.def)             Requested size: 126.47249pt x 113.95084pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
-
- []
-
-<Graphs/NeumannCubes_Density_Vs_Time_Far.png, id=209, 416.2752pt x 328.8285pt>
-File: Graphs/NeumannCubes_Density_Vs_Time_Far.png Graphic file (type png)
-<use Graphs/NeumannCubes_Density_Vs_Time_Far.png>
-Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Far.png  used on input line 299.
-(pdftex.def)             Requested size: 161.8885pt x 127.88133pt.
-<Graphs/NeumannCubes_Density_Vs_Time_Middle.png, id=210, 409.7709pt x 328.8285pt>
-File: Graphs/NeumannCubes_Density_Vs_Time_Middle.png Graphic file (type png)
-<use Graphs/NeumannCubes_Density_Vs_Time_Middle.png>
-Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Middle.png  used on input line 300.
-(pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
-<Graphs/NeumannCubes_Density_Vs_Time_Close.png, id=211, 409.7709pt x 328.8285pt>
-File: Graphs/NeumannCubes_Density_Vs_Time_Close.png Graphic file (type png)
-<use Graphs/NeumannCubes_Density_Vs_Time_Close.png>
-Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Close.png  used on input line 301.
-(pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[9 <./Graphs/Graph_FuelRodInGrid_Middle.png> <./Graphs/GraphFuelRodInGrid_Close.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 315--317
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
  []
 
@@ -1296,7 +1185,154 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[10 <./Graphs/DirichletCubes_Density_Vs_Time_Far.png> <./Graphs/DirichletCubes_Density_Vs_Time_Middle.png> <./Graphs/DirichletCubes_Density_Vs_Time_Close.png> <./Images/Dirichlet-25m-Image.png> <./Images/Dirichlet-20m-Image.png> <./Images/Dirichlet-10m-Image.png> <./Images/Neumann-25m-Image.png> <./Images/Neumann-20m-Image.png> <./Images/Neumann-10m-Image.png>]
+[8 <./Images/1cm-Source-1.png> <./Images/1cm-Source-2.png> <./Images/1cm-Source-3.png> <./Images/1cm-Source-4.png> <./Graphs/1cm-Cube.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
+
+ []
+
+<Graphs/Sphere-and-Hemisphere-Far.png, id=202, 294.1389pt x 302.0886pt>
+File: Graphs/Sphere-and-Hemisphere-Far.png Graphic file (type png)
+<use Graphs/Sphere-and-Hemisphere-Far.png>
+Package pdftex.def Info: Graphs/Sphere-and-Hemisphere-Far.png  used on input line 258.
+(pdftex.def)             Requested size: 202.3529pt x 207.82828pt.
+<Graphs/Sphere-and-Hemisphere-Close.png, id=203, 294.1389pt x 302.0886pt>
+File: Graphs/Sphere-and-Hemisphere-Close.png Graphic file (type png)
+<use Graphs/Sphere-and-Hemisphere-Close.png>
+Package pdftex.def Info: Graphs/Sphere-and-Hemisphere-Close.png  used on input line 259.
+(pdftex.def)             Requested size: 202.3529pt x 207.82828pt.
+<Graphs/Sphere-and-Hemisphere-Far-Density.png, id=204, 422.0568pt x 328.8285pt>
+File: Graphs/Sphere-and-Hemisphere-Far-Density.png Graphic file (type png)
+<use Graphs/Sphere-and-Hemisphere-Far-Density.png>
+Package pdftex.def Info: Graphs/Sphere-and-Hemisphere-Far-Density.png  used on input line 266.
+(pdftex.def)             Requested size: 202.3529pt x 157.65526pt.
+<Graphs/Sphere-and-Hemisphere-Close-Density.png, id=205, 400.3758pt x 328.8285pt>
+File: Graphs/Sphere-and-Hemisphere-Close-Density.png Graphic file (type png)
+<use Graphs/Sphere-and-Hemisphere-Close-Density.png>
+Package pdftex.def Info: Graphs/Sphere-and-Hemisphere-Close-Density.png  used on input line 267.
+(pdftex.def)             Requested size: 202.3529pt x 166.19505pt.
+<Images/Sphere-and-Hemisphere-Far-1.png, id=206, 456.20438pt x 404.26031pt>
+File: Images/Sphere-and-Hemisphere-Far-1.png Graphic file (type png)
+<use Images/Sphere-and-Hemisphere-Far-1.png>
+Package pdftex.def Info: Images/Sphere-and-Hemisphere-Far-1.png  used on input line 274.
+(pdftex.def)             Requested size: 111.29642pt x 98.6221pt.
+<Images/Sphere-and-Hemisphere-Far-2.png, id=207, 450.9347pt x 406.51875pt>
+File: Images/Sphere-and-Hemisphere-Far-2.png Graphic file (type png)
+<use Images/Sphere-and-Hemisphere-Far-2.png>
+Package pdftex.def Info: Images/Sphere-and-Hemisphere-Far-2.png  used on input line 275.
+(pdftex.def)             Requested size: 111.29642pt x 100.33301pt.
+<Images/Sphere-and-Hemisphere-Far-3.png, id=208, 452.4403pt x 402.75468pt>
+File: Images/Sphere-and-Hemisphere-Far-3.png Graphic file (type png)
+<use Images/Sphere-and-Hemisphere-Far-3.png>
+Package pdftex.def Info: Images/Sphere-and-Hemisphere-Far-3.png  used on input line 276.
+(pdftex.def)             Requested size: 111.29642pt x 99.07214pt.
+<Images/Sphere-and-Hemisphere-Far-4.png, id=209, 454.69875pt x 403.5075pt>
+File: Images/Sphere-and-Hemisphere-Far-4.png Graphic file (type png)
+<use Images/Sphere-and-Hemisphere-Far-4.png>
+Package pdftex.def Info: Images/Sphere-and-Hemisphere-Far-4.png  used on input line 277.
+(pdftex.def)             Requested size: 111.29642pt x 98.76477pt.
+<Images/Sphere-and-Hemisphere-Close-1.png, id=210, 454.69875pt x 405.01312pt>
+File: Images/Sphere-and-Hemisphere-Close-1.png Graphic file (type png)
+<use Images/Sphere-and-Hemisphere-Close-1.png>
+Package pdftex.def Info: Images/Sphere-and-Hemisphere-Close-1.png  used on input line 278.
+(pdftex.def)             Requested size: 111.29642pt x 99.13329pt.
+<Images/Sphere-and-Hemisphere-Close-2.png, id=211, 451.6875pt x 404.26031pt>
+File: Images/Sphere-and-Hemisphere-Close-2.png Graphic file (type png)
+<use Images/Sphere-and-Hemisphere-Close-2.png>
+Package pdftex.def Info: Images/Sphere-and-Hemisphere-Close-2.png  used on input line 279.
+(pdftex.def)             Requested size: 111.29642pt x 99.60905pt.
+<Images/Sphere-and-Hemisphere-Close-3.png, id=212, 449.42906pt x 403.5075pt>
+File: Images/Sphere-and-Hemisphere-Close-3.png Graphic file (type png)
+<use Images/Sphere-and-Hemisphere-Close-3.png>
+Package pdftex.def Info: Images/Sphere-and-Hemisphere-Close-3.png  used on input line 280.
+(pdftex.def)             Requested size: 111.29642pt x 99.92229pt.
+<Images/Sphere-and-Hemisphere-Close-4.png, id=213, 445.665pt x 408.77719pt>
+File: Images/Sphere-and-Hemisphere-Close-4.png Graphic file (type png)
+<use Images/Sphere-and-Hemisphere-Close-4.png>
+Package pdftex.def Info: Images/Sphere-and-Hemisphere-Close-4.png  used on input line 281.
+(pdftex.def)             Requested size: 111.29642pt x 102.08177pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
+
+ []
+
+<Graphs/Cylinder-Prism-Far-Grid.png, id=214, 294.1389pt x 302.0886pt>
+File: Graphs/Cylinder-Prism-Far-Grid.png Graphic file (type png)
+<use Graphs/Cylinder-Prism-Far-Grid.png>
+Package pdftex.def Info: Graphs/Cylinder-Prism-Far-Grid.png  used on input line 290.
+(pdftex.def)             Requested size: 202.3529pt x 207.82828pt.
+<Graphs/Cylinder-Prism-Close-Grid.png, id=215, 294.1389pt x 302.0886pt>
+File: Graphs/Cylinder-Prism-Close-Grid.png Graphic file (type png)
+<use Graphs/Cylinder-Prism-Close-Grid.png>
+Package pdftex.def Info: Graphs/Cylinder-Prism-Close-Grid.png  used on input line 291.
+(pdftex.def)             Requested size: 202.3529pt x 207.82828pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Graphs/Cylinder-Prism-Far-Graph.png, id=216, 416.2752pt x 328.8285pt>
+File: Graphs/Cylinder-Prism-Far-Graph.png Graphic file (type png)
+<use Graphs/Cylinder-Prism-Far-Graph.png>
+Package pdftex.def Info: Graphs/Cylinder-Prism-Far-Graph.png  used on input line 298.
+(pdftex.def)             Requested size: 202.3529pt x 159.8479pt.
+<Graphs/Cylinder-Prism-Close-Graph.png, id=217, 409.7709pt x 328.8285pt>
+File: Graphs/Cylinder-Prism-Close-Graph.png Graphic file (type png)
+<use Graphs/Cylinder-Prism-Close-Graph.png>
+Package pdftex.def Info: Graphs/Cylinder-Prism-Close-Graph.png  used on input line 299.
+(pdftex.def)             Requested size: 202.3529pt x 162.38174pt.
+<Images/Cylinder-Prism-Far-1.png, id=218, 445.665pt x 404.26031pt>
+File: Images/Cylinder-Prism-Far-1.png Graphic file (type png)
+<use Images/Cylinder-Prism-Far-1.png>
+Package pdftex.def Info: Images/Cylinder-Prism-Far-1.png  used on input line 306.
+(pdftex.def)             Requested size: 111.29642pt x 100.9538pt.
+<Images/Cylinder-Prism-Close-2.png, id=219, 453.19313pt x 410.2828pt>
+File: Images/Cylinder-Prism-Close-2.png Graphic file (type png)
+<use Images/Cylinder-Prism-Close-2.png>
+Package pdftex.def Info: Images/Cylinder-Prism-Close-2.png  used on input line 307.
+(pdftex.def)             Requested size: 111.29642pt x 100.75493pt.
+<Images/Cylinder-Prism-Far-3.png, id=220, 452.4403pt x 405.01312pt>
+File: Images/Cylinder-Prism-Far-3.png Graphic file (type png)
+<use Images/Cylinder-Prism-Far-3.png>
+Package pdftex.def Info: Images/Cylinder-Prism-Far-3.png  used on input line 308.
+(pdftex.def)             Requested size: 111.29642pt x 99.62769pt.
+<Images/Cylinder-Prism-Far-4.png, id=221, 451.6875pt x 404.26031pt>
+File: Images/Cylinder-Prism-Far-4.png Graphic file (type png)
+<use Images/Cylinder-Prism-Far-4.png>
+Package pdftex.def Info: Images/Cylinder-Prism-Far-4.png  used on input line 309.
+(pdftex.def)             Requested size: 111.29642pt x 99.60905pt.
+<Images/Cylinder-Prism-Close-1.png, id=222, 450.9347pt x 409.53pt>
+File: Images/Cylinder-Prism-Close-1.png Graphic file (type png)
+<use Images/Cylinder-Prism-Close-1.png>
+Package pdftex.def Info: Images/Cylinder-Prism-Close-1.png  used on input line 310.
+(pdftex.def)             Requested size: 111.29642pt x 101.07622pt.
+File: Images/Cylinder-Prism-Close-2.png Graphic file (type png)
+<use Images/Cylinder-Prism-Close-2.png>
+Package pdftex.def Info: Images/Cylinder-Prism-Close-2.png  used on input line 311.
+(pdftex.def)             Requested size: 111.29642pt x 100.75493pt.
+<Images/Cylinder-Prism-Close-3.png, id=223, 448.67625pt x 405.76593pt>
+File: Images/Cylinder-Prism-Close-3.png Graphic file (type png)
+<use Images/Cylinder-Prism-Close-3.png>
+Package pdftex.def Info: Images/Cylinder-Prism-Close-3.png  used on input line 312.
+(pdftex.def)             Requested size: 111.29642pt x 100.64871pt.
+<Images/Cylinder-Prism-Close-4.png, id=224, 449.42906pt x 401.24907pt>
+File: Images/Cylinder-Prism-Close-4.png Graphic file (type png)
+<use Images/Cylinder-Prism-Close-4.png>
+Package pdftex.def Info: Images/Cylinder-Prism-Close-4.png  used on input line 313.
+(pdftex.def)             Requested size: 111.29642pt x 99.36302pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9 <./Graphs/Sphere-and-Hemisphere-Far.png> <./Graphs/Sphere-and-Hemisphere-Close.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 320--321
 
  []
@@ -1308,8 +1344,79 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[11 <./Graphs/NeumannCubes_Density_Vs_Time_Far.png> <./Graphs/NeumannCubes_Density_Vs_Time_Middle.png> <./Graphs/NeumannCubes_Density_Vs_Time_Close.png>]
+[10 <./Graphs/Sphere-and-Hemisphere-Far-Density.png> <./Graphs/Sphere-and-Hemisphere-Close-Density.png> <./Images/Sphere-and-Hemisphere-Far-1.png> <./Images/Sphere-and-Hemisphere-Far-2.png> <./Images/Sphere-and-Hemisphere-Far-3.png> <./Images/Sphere-and-Hemisphere-Far-4.png> <./Images/Sphere-and-Hemisphere-Close-1.png> <./Images/Sphere-and-Hemisphere-Close-2.png> <./Images/Sphere-and-Hemisphere-Close-3.png> <./Images/Sphere-and-Hemisphere-Close-4.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 322--323
+
+ []
+
+<Graphs/URANIUM-DECAY-GRAPH.png, id=263, 416.2752pt x 328.8285pt>
+File: Graphs/URANIUM-DECAY-GRAPH.png Graphic file (type png)
+<use Graphs/URANIUM-DECAY-GRAPH.png>
+Package pdftex.def Info: Graphs/URANIUM-DECAY-GRAPH.png  used on input line 329.
+(pdftex.def)             Requested size: 202.3529pt x 159.8479pt.
+<Graphs/URANIUM-GROWTH-GRAPH.png, id=264, 400.3758pt x 328.8285pt>
+File: Graphs/URANIUM-GROWTH-GRAPH.png Graphic file (type png)
+<use Graphs/URANIUM-GROWTH-GRAPH.png>
+Package pdftex.def Info: Graphs/URANIUM-GROWTH-GRAPH.png  used on input line 330.
+(pdftex.def)             Requested size: 202.3529pt x 166.19505pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11 <./Graphs/Cylinder-Prism-Far-Grid.png> <./Graphs/Cylinder-Prism-Close-Grid.png> <./Graphs/Cylinder-Prism-Far-Graph.png> <./Graphs/Cylinder-Prism-Close-Graph.png>]
+File: Graphs/Graph_FuelRodsInGrid.png Graphic file (type png)
+<use Graphs/Graph_FuelRodsInGrid.png>
+Package pdftex.def Info: Graphs/Graph_FuelRodsInGrid.png  used on input line 337.
+(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
+<Graphs/Graph_FuelRodInGrid_Middle.png, id=274, 294.1389pt x 302.0886pt>
+File: Graphs/Graph_FuelRodInGrid_Middle.png Graphic file (type png)
+<use Graphs/Graph_FuelRodInGrid_Middle.png>
+Package pdftex.def Info: Graphs/Graph_FuelRodInGrid_Middle.png  used on input line 338.
+(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
+<Graphs/GraphFuelRodInGrid_Close.png, id=275, 294.1389pt x 302.0886pt>
+File: Graphs/GraphFuelRodInGrid_Close.png Graphic file (type png)
+<use Graphs/GraphFuelRodInGrid_Close.png>
+Package pdftex.def Info: Graphs/GraphFuelRodInGrid_Close.png  used on input line 339.
+(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Images/BOOM-BOOM-1.png, id=276, 458.46281pt x 408.77719pt>
+File: Images/BOOM-BOOM-1.png Graphic file (type png)
+<use Images/BOOM-BOOM-1.png>
+Package pdftex.def Info: Images/BOOM-BOOM-1.png  used on input line 346.
+(pdftex.def)             Requested size: 111.29642pt x 99.23126pt.
+<Images/BOOM-BOOM-2.png, id=277, 463.7325pt x 411.03563pt>
+File: Images/BOOM-BOOM-2.png Graphic file (type png)
+<use Images/BOOM-BOOM-2.png>
+Package pdftex.def Info: Images/BOOM-BOOM-2.png  used on input line 347.
+(pdftex.def)             Requested size: 111.29642pt x 98.64429pt.
+<Images/BOOM-BOOM-3.png, id=278, 451.6875pt x 415.5525pt>
+File: Images/BOOM-BOOM-3.png Graphic file (type png)
+<use Images/BOOM-BOOM-3.png>
+Package pdftex.def Info: Images/BOOM-BOOM-3.png  used on input line 348.
+(pdftex.def)             Requested size: 111.29642pt x 102.39143pt.
+<Images/BOOM-BOOM-4.png, id=279, 445.665pt x 411.78844pt>
+File: Images/BOOM-BOOM-4.png Graphic file (type png)
+<use Images/BOOM-BOOM-4.png>
+Package pdftex.def Info: Images/BOOM-BOOM-4.png  used on input line 349.
+(pdftex.def)             Requested size: 111.29642pt x 102.83374pt.
+<Images/Castle Bravo.jpg, id=280, 695.59875pt x 707.64375pt>
+File: Images/Castle Bravo.jpg Graphic file (type jpg)
+<use Images/Castle Bravo.jpg>
+Package pdftex.def Info: Images/Castle Bravo.jpg  used on input line 356.
+(pdftex.def)             Requested size: 121.41637pt x 123.51558pt.
+<Images/Castle-Bravo-Bomb.jpg, id=281, 642.4pt x 466.74374pt>
+File: Images/Castle-Bravo-Bomb.jpg Graphic file (type jpg)
+<use Images/Castle-Bravo-Bomb.jpg>
+Package pdftex.def Info: Images/Castle-Bravo-Bomb.jpg  used on input line 357.
+(pdftex.def)             Requested size: 169.97829pt x 123.50133pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
@@ -1320,7 +1427,189 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[12] (e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.bbl)
+[12 <./Images/Cylinder-Prism-Far-1.png> <./Images/Cylinder-Prism-Close-2.png> <./Images/Cylinder-Prism-Far-3.png> <./Images/Cylinder-Prism-Far-4.png> <./Images/Cylinder-Prism-Close-1.png> <./Images/Cylinder-Prism-Close-3.png> <./Images/Cylinder-Prism-Close-4.png> <./Graphs/URANIUM-DECAY-GRAPH.png> <./Graphs/URANIUM-GROWTH-GRAPH.png>]
+<Graphs/Criticality-Test-U235-25m.png, id=299, 422.0568pt x 328.8285pt>
+File: Graphs/Criticality-Test-U235-25m.png Graphic file (type png)
+<use Graphs/Criticality-Test-U235-25m.png>
+Package pdftex.def Info: Graphs/Criticality-Test-U235-25m.png  used on input line 369.
+(pdftex.def)             Requested size: 151.76854pt x 118.24269pt.
+<Graphs/Criticality-Test-U235-27m.png, id=300, 416.2752pt x 328.8285pt>
+File: Graphs/Criticality-Test-U235-27m.png Graphic file (type png)
+<use Graphs/Criticality-Test-U235-27m.png>
+Package pdftex.def Info: Graphs/Criticality-Test-U235-27m.png  used on input line 370.
+(pdftex.def)             Requested size: 151.76854pt x 119.88844pt.
+<Graphs/Criticality-Test-U235-28m.png, id=301, 422.0568pt x 328.8285pt>
+File: Graphs/Criticality-Test-U235-28m.png Graphic file (type png)
+<use Graphs/Criticality-Test-U235-28m.png>
+Package pdftex.def Info: Graphs/Criticality-Test-U235-28m.png  used on input line 371.
+(pdftex.def)             Requested size: 151.76854pt x 118.24269pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--377
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13 <./Graphs/Graph_FuelRodInGrid_Middle.png> <./Graphs/GraphFuelRodInGrid_Close.png> <./Images/BOOM-BOOM-1.png> <./Images/BOOM-BOOM-2.png> <./Images/BOOM-BOOM-3.png> <./Images/BOOM-BOOM-4.png> <./Images/Castle Bravo.jpg> <./Images/Castle-Bravo-Bomb.jpg>]
+<Graphs/Criticality-Test-Pu-239-31m.png, id=314, 416.2752pt x 328.8285pt>
+File: Graphs/Criticality-Test-Pu-239-31m.png Graphic file (type png)
+<use Graphs/Criticality-Test-Pu-239-31m.png>
+Package pdftex.def Info: Graphs/Criticality-Test-Pu-239-31m.png  used on input line 380.
+(pdftex.def)             Requested size: 227.64894pt x 179.82764pt.
+<Graphs/Criticality-Test-Pu-239-36m.png, id=315, 409.7709pt x 328.8285pt>
+File: Graphs/Criticality-Test-Pu-239-36m.png Graphic file (type png)
+<use Graphs/Criticality-Test-Pu-239-36m.png>
+Package pdftex.def Info: Graphs/Criticality-Test-Pu-239-36m.png  used on input line 381.
+(pdftex.def)             Requested size: 227.64894pt x 182.6826pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[14 <./Graphs/Criticality-Test-U235-25m.png> <./Graphs/Criticality-Test-U235-27m.png> <./Graphs/Criticality-Test-U235-28m.png> <./Graphs/Criticality-Test-Pu-239-31m.png> <./Graphs/Criticality-Test-Pu-239-36m.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
+
+ []
+
+File: Graphs/Graph_FuelRodsInGrid.png Graphic file (type png)
+<use Graphs/Graph_FuelRodsInGrid.png>
+Package pdftex.def Info: Graphs/Graph_FuelRodsInGrid.png  used on input line 409.
+(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
+File: Graphs/Graph_FuelRodInGrid_Middle.png Graphic file (type png)
+<use Graphs/Graph_FuelRodInGrid_Middle.png>
+Package pdftex.def Info: Graphs/Graph_FuelRodInGrid_Middle.png  used on input line 410.
+(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
+File: Graphs/GraphFuelRodInGrid_Close.png Graphic file (type png)
+<use Graphs/GraphFuelRodInGrid_Close.png>
+Package pdftex.def Info: Graphs/GraphFuelRodInGrid_Close.png  used on input line 411.
+(pdftex.def)             Requested size: 151.76854pt x 155.87466pt.
+<Graphs/DirichletCubes_Density_Vs_Time_Far.png, id=329, 422.0568pt x 328.8285pt>
+File: Graphs/DirichletCubes_Density_Vs_Time_Far.png Graphic file (type png)
+<use Graphs/DirichletCubes_Density_Vs_Time_Far.png>
+Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Far.png  used on input line 418.
+(pdftex.def)             Requested size: 161.8885pt x 126.13022pt.
+<Graphs/DirichletCubes_Density_Vs_Time_Middle.png, id=330, 409.7709pt x 328.8285pt>
+File: Graphs/DirichletCubes_Density_Vs_Time_Middle.png Graphic file (type png)
+<use Graphs/DirichletCubes_Density_Vs_Time_Middle.png>
+Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Middle.png  used on input line 419.
+(pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
+<Graphs/DirichletCubes_Density_Vs_Time_Close.png, id=331, 409.7709pt x 328.8285pt>
+File: Graphs/DirichletCubes_Density_Vs_Time_Close.png Graphic file (type png)
+<use Graphs/DirichletCubes_Density_Vs_Time_Close.png>
+Package pdftex.def Info: Graphs/DirichletCubes_Density_Vs_Time_Close.png  used on input line 420.
+(pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
+<Images/Dirichlet-25m-Image.png, id=332, 459.96844pt x 410.2828pt>
+File: Images/Dirichlet-25m-Image.png Graphic file (type png)
+<use Images/Dirichlet-25m-Image.png>
+Package pdftex.def Info: Images/Dirichlet-25m-Image.png  used on input line 427.
+(pdftex.def)             Requested size: 126.47249pt x 112.81247pt.
+<Images/Dirichlet-20m-Image.png, id=333, 455.45157pt x 411.78844pt>
+File: Images/Dirichlet-20m-Image.png Graphic file (type png)
+<use Images/Dirichlet-20m-Image.png>
+Package pdftex.def Info: Images/Dirichlet-20m-Image.png  used on input line 428.
+(pdftex.def)             Requested size: 126.47249pt x 114.3449pt.
+<Images/Dirichlet-10m-Image.png, id=334, 456.95718pt x 402.75468pt>
+File: Images/Dirichlet-10m-Image.png Graphic file (type png)
+<use Images/Dirichlet-10m-Image.png>
+Package pdftex.def Info: Images/Dirichlet-10m-Image.png  used on input line 429.
+(pdftex.def)             Requested size: 126.47249pt x 111.46768pt.
+<Images/Neumann-25m-Image.png, id=335, 460.72125pt x 408.02437pt>
+File: Images/Neumann-25m-Image.png Graphic file (type png)
+<use Images/Neumann-25m-Image.png>
+Package pdftex.def Info: Images/Neumann-25m-Image.png  used on input line 430.
+(pdftex.def)             Requested size: 126.47249pt x 112.0047pt.
+<Images/Neumann-20m-Image.png, id=336, 457.71pt x 405.01312pt>
+File: Images/Neumann-20m-Image.png Graphic file (type png)
+<use Images/Neumann-20m-Image.png>
+Package pdftex.def Info: Images/Neumann-20m-Image.png  used on input line 431.
+(pdftex.def)             Requested size: 126.47249pt x 111.90733pt.
+<Images/Neumann-10m-Image.png, id=337, 448.67625pt x 404.26031pt>
+File: Images/Neumann-10m-Image.png Graphic file (type png)
+<use Images/Neumann-10m-Image.png>
+Package pdftex.def Info: Images/Neumann-10m-Image.png  used on input line 432.
+(pdftex.def)             Requested size: 126.47249pt x 113.95084pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[15]
+<Graphs/NeumannCubes_Density_Vs_Time_Far.png, id=349, 416.2752pt x 328.8285pt>
+File: Graphs/NeumannCubes_Density_Vs_Time_Far.png Graphic file (type png)
+<use Graphs/NeumannCubes_Density_Vs_Time_Far.png>
+Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Far.png  used on input line 443.
+(pdftex.def)             Requested size: 161.8885pt x 127.88133pt.
+<Graphs/NeumannCubes_Density_Vs_Time_Middle.png, id=350, 409.7709pt x 328.8285pt>
+File: Graphs/NeumannCubes_Density_Vs_Time_Middle.png Graphic file (type png)
+<use Graphs/NeumannCubes_Density_Vs_Time_Middle.png>
+Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Middle.png  used on input line 444.
+(pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
+<Graphs/NeumannCubes_Density_Vs_Time_Close.png, id=351, 409.7709pt x 328.8285pt>
+File: Graphs/NeumannCubes_Density_Vs_Time_Close.png Graphic file (type png)
+<use Graphs/NeumannCubes_Density_Vs_Time_Close.png>
+Package pdftex.def Info: Graphs/NeumannCubes_Density_Vs_Time_Close.png  used on input line 445.
+(pdftex.def)             Requested size: 161.8885pt x 129.9084pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[16 <./Graphs/DirichletCubes_Density_Vs_Time_Far.png> <./Graphs/DirichletCubes_Density_Vs_Time_Middle.png> <./Graphs/DirichletCubes_Density_Vs_Time_Close.png> <./Images/Dirichlet-25m-Image.png> <./Images/Dirichlet-20m-Image.png> <./Images/Dirichlet-10m-Image.png> <./Images/Neumann-25m-Image.png> <./Images/Neumann-20m-Image.png> <./Images/Neumann-10m-Image.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 457--459
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 462--463
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[17 <./Graphs/NeumannCubes_Density_Vs_Time_Far.png> <./Graphs/NeumannCubes_Density_Vs_Time_Middle.png> <./Graphs/NeumannCubes_Density_Vs_Time_Close.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[18] (e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.bbl)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1332,20 +1621,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.332 \end{document}
+l.474 \end{document}
                      [1] (e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.aux) ) 
 Here is how much of TeX's memory you used:
- 45822 strings out of 475281
- 1100901 string characters out of 2774064
- 1538229 words of memory out of 3000000
- 66375 multiletter control sequences out of 15000+600000
- 477319 words of font info for 57 fonts, out of 8000000 for 9000
+ 46133 strings out of 475281
+ 1110718 string characters out of 2774064
+ 1540200 words of memory out of 3000000
+ 66621 multiletter control sequences out of 15000+600000
+ 481775 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,103p,2475b,609s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.pdf (14 pages, 2287749 bytes).
+<C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/epetr/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on e:\GitHub\Neutron-Diffusion\Stationary\build\Neutron_Diffusion_Stationary.pdf (20 pages, 3682257 bytes).
 PDF statistics:
- 367 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 419 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 504 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 500000)
+ 591 words of extra memory for PDF output out of 10000 (max. 10000000)
 

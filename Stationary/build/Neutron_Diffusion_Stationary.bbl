@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Diffusion-Defn}
 ``Diffusion,'' Jul 2018.
@@ -26,6 +26,11 @@ K.~Hirano, M.~Cohen, and B.~Averbach, ``Diffusion of nickel into iron,'' {\em
 
 \bibitem{What-is-Plutonium?}
 ``What is plutonium?.''
+
+\bibitem{TSAR-BOMBA}
+``Tsar bomba,'' Dec. 2024.
+\newblock Page Version ID: 1263516257, Creative Commons Attribution-ShareAlike
+  License.
 
 \bibitem{Python-Floating-Point-Error}
 ``Floating-point arithmetic.''
