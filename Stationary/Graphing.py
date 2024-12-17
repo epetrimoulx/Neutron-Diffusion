@@ -31,12 +31,35 @@ def plot_fuel_rod_positions(array):
     plt.show()
 
 
-def plot_neutron_density_evolution(result, time, timestep_interval=10):
-    for timestep in range(0, len(time), timestep_interval):
-        plt.imshow(np.transpose(result[:, -1//2, :, timestep]), cmap='coolwarm', origin='lower', vmin=0)
-        plt.colorbar(fraction=0.02)
-        plt.title(f'Neutron Density at Time {time[timestep]}s')
-        plt.show()
+def plot_diffusion(time_step, y_index):
+    """Plot a 2D slice of the 3D diffusion result at a specific time step."""
+    plt.figure(figsize=(8, 6))
+    
+    # Create the imshow plot and store the return object
+    im = plt.imshow(
+        np.transpose(result[:, y_index, :, time_step]),
+        cmap='coolwarm',
+        origin='lower',
+        vmin=0.0,
+        vmax=3e33
+    )
+    
+    # Add contour on top of the image
+    plt.contour(
+        np.transpose(result[:, y_index, :, time_step]),
+        levels=30,
+        linewidths=0.5,
+        colors='k',
+        alpha=0.5
+    )
+    
+    # Use the imshow object to add the color bar
+    plt.colorbar(im, fraction=0.02)
+    
+    plt.title(f"Diffusion at step {time_step}")
+    plt.xlabel("X-axis")
+    plt.ylabel("Z-axis")
+    plt.show()
 
 
 def plot_k_vs_time(k, time):

@@ -1,17 +1,3 @@
-"""
-File to deal with the Diffusion Equation
-
-The diffusion constant is equal to µ = λ_t v_neut/3, where λt represents neutron transport free
-path, and v_neut represents neutron speed. The neutron rate of formation constant is
-equal to η = v_neut(v - 1)/λf , where v represents secondary neutrons created by fission
-(the -1 accounts for the neutron causing fission being consumed in the reaction), and
-λf represents neutron fission free path. Using U235 values from Table (7) we obtain:
-µ = 2.345E+05 (m2/s) and η = 1.896E+08 (1/s).
-"""
-
-import numba
-import numpy as np
-
 @numba.njit
 def diffusion_3d(
         init_condition: np.ndarray,
@@ -27,8 +13,9 @@ def diffusion_3d(
     """
     Simulates the 3D diffusion-reaction process over a grid with Dirichlet or Neumann boundary conditions.
     This function evolves the neutron density `n` over time according to the diffusion-reaction equation:
-        ∂n/∂t = D ∇²n + \eta n
-    where `D` is the diffusion constant, and `\eta` is the reaction rate constant.
+        ∂n/∂t = D ∇²n + ηn
+    where `D` is the diffusion constant, and η is the reaction rate constant.
+    
     :param init_condition: Initial neutron density array (3D ndarray).
     :type init_condition: numpy.ndarray
     :param grid_spacing: Distance between grid points in the spatial domain.
@@ -54,8 +41,10 @@ def diffusion_3d(
       - Applies periodic boundaries with modular indexing.
       - Dirichlet boundary conditions are used if `dirichlet_values` is provided;
         otherwise, Neumann (no-flux) conditions are applied, keeping boundary values constant.
+        
     :author: Evan Petrimoulx
     :date: November 4th 2024
+    
     **Example usage:**
     .. code-block:: python
         nx, ny, nz = 10, 10, 10
@@ -79,18 +68,39 @@ def diffusion_3d(
             for iy in range(0, ny):     
                 for iz in range(0, nz):
                     if not boundary[ix, iy, iz]:
-                        diffusion[ix, iy, iz, it] = (diffusion[ix, iy, iz, it - 1] + 0.25 * d * (
-                                diffusion[(ix + 1) % nx, iy, iz, it - 1] +
-                                diffusion[(ix - 1) % nx, iy, iz, it - 1] +
-                                diffusion[ix, (iy + 1) % ny, iz, it - 1] +
-                                diffusion[ix, (iy - 1) % ny, iz, it - 1] +
-                                diffusion[ix, iy, (iz + 1) % nz, it - 1] +
-                                diffusion[ix, iy, (iz - 1) % nz, it - 1] - 6 * diffusion[ix, iy, iz, it - 1]) +
-                                reaction_rate * diffusion[ix, iy, iz, it - 1] * timestep)
+                        if (ix < nx // 2 + 3) and (ix > nx // 2 - 3):
+                            diffusion[ix, iy, iz, it] = (diffusion[ix, iy, iz, it - 1] + 0.25 * d * (
+                                    diffusion[(ix + 1) % nx, iy, iz, it - 1] +
+                                    diffusion[(ix - 1) % nx, iy, iz, it - 1] +
+                                    diffusion[ix, (iy + 1) % ny, iz, it - 1] +
+                                    diffusion[ix, (iy - 1) % ny, iz, it - 1] +
+                                    diffusion[ix, iy, (iz + 1) % nz, it - 1] +
+                                    diffusion[ix, iy, (iz - 1) % nz, it - 1] - 6 * diffusion[ix, iy, iz, it - 1]) +
+                                    reaction_rate * diffusion[ix, iy, iz, it - 1] * timestep)
+                        else:
+                            diffusion[ix, iy, iz, it] = (diffusion[ix, iy, iz, it - 1] + 0.25 * d * (
+                                    diffusion[(ix + 1) % nx, iy, iz, it - 1] +
+                                    diffusion[(ix - 1) % nx, iy, iz, it - 1] +
+                                    diffusion[ix, (iy + 1) % ny, iz, it - 1] +
+                                    diffusion[ix, (iy - 1) % ny, iz, it - 1] +
+                                    diffusion[ix, iy, (iz + 1) % nz, it - 1] +
+                                    diffusion[ix, iy, (iz - 1) % nz, it - 1] - 6 * diffusion[ix, iy, iz, it - 1]))
+
                     else:
-                        # Neumann Boundary Conditions
+                        # Neumann Boundary Conditions (zero flux)
                         if boundary_type == 'neumann':
-                            diffusion[ix, iy, iz, it] = diffusion[ix, iy, iz, it - 1]
+                            if ix == 0:
+                                diffusion[ix, iy, iz, it] = diffusion[ix + 1, iy, iz, it - 1]
+                            elif ix == nx - 1:
+                                diffusion[ix, iy, iz, it] = diffusion[ix - 1, iy, iz, it - 1]
+                            if iy == 0:
+                                diffusion[ix, iy, iz, it] = diffusion[ix, iy + 1, iz, it - 1]
+                            elif iy == ny - 1:
+                                diffusion[ix, iy, iz, it] = diffusion[ix, iy - 1, iz, it - 1]
+                            if iz == 0:
+                                diffusion[ix, iy, iz, it] = diffusion[ix, iy, iz + 1, it - 1]
+                            elif iz == nz - 1:
+                                diffusion[ix, iy, iz, it] = diffusion[ix, iy, iz - 1, it - 1]
 
                         # Dirichlet Boundary Conditions
                         elif boundary_type == 'dirichlet' and dirichlet_values is not None:

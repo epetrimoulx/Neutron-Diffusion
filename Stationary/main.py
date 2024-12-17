@@ -6,8 +6,13 @@ from Diffusion import *
 from Graphing import *
 from Material import Shape
 
-BOX_LENGTH: int = 40
-DIFFUSION_CONST: float = 2.34e5
+BOX_LENGTH: int = 42 # [m]
+DIFFUSION_CONST: float = 2.34e5 # [1/s]
+NEUTRON_ENERGY: float = 2 # [MeV]
+MeV_to_J: float = 1.6022e-13 # [MeV/J]
+URANIUM_DENSITY: float = 18710.0 # [kg/m^3]
+PLUTONIUM_DENSITY: float = 15600.0 # [kg/m^3]
+AU_to_Kg: float = 1.6605e-27 # [au/kg]
 
 
 def growth_rate(total_density: np.ndarray) -> np.ndarray:
@@ -29,8 +34,6 @@ def growth_rate(total_density: np.ndarray) -> np.ndarray:
     for i in range(1, len(total_density) - 1):
         k_effective[i+1] =  total_density[i+1] / total_density[i]
 
-    print(k_effective)
-    exit()
     return k_effective
 
 def determine_k(k) -> None:
@@ -73,19 +76,26 @@ def place_fuel_rods_in_grid(grid: np.ndarray[float], rod1_initial_condition: np.
     grid[start_x:start_x + smaller_size1[0], start_y:start_y + smaller_size1[1], start_z:start_z + smaller_size1[2]] = rod1_initial_condition
 
     # Calculate the starting indices for placing the second smaller array
-    start_x = center_larger_x - smaller_size1[0] // 2 - separation//2
-    start_y = center_larger_y - smaller_size1[1] // 2
-    start_z = center_larger_z - smaller_size1[2] // 2
+    start_x = center_larger_x - smaller_size2[0] // 2 - separation//2
+    start_y = center_larger_y - smaller_size2[1] // 2
+    start_z = center_larger_z - smaller_size2[2] // 2
 
-    grid[start_x:start_x + smaller_size2[0], start_y:start_y + smaller_size2[1],start_z:start_z + smaller_size2[2]] = rod1_initial_condition
+    grid[start_x:start_x + smaller_size2[0], start_y:start_y + smaller_size2[1],start_z:start_z + smaller_size2[2]] = rod2_initial_condition
 
     return grid
+
+def get_energy(density: np.ndarray[float]) -> None:
+    energy_init = density[0] * NEUTRON_ENERGY * MeV_to_J
+    energy_final = density[-1] * NEUTRON_ENERGY * MeV_to_J
+    print(f'\nThe energy in the system initially is {energy_init:.3e} J')
+    print(f'The energy in the system at the end of the simulation is {energy_final:.3e} J\n')
+    print(f'The energy emitted/lost was {energy_final - energy_init:.2e} J')
 
 
 def main():
     # Create Fuel Rod Objects
-    fuel_rod_1 = Shape(8, 8, 8, 'Sphere', 235, 'Uranium', 92)
-    fuel_rod_2 = Shape(8, 8, 8, 'Sphere', 235, 'Uranium', 92)
+    fuel_rod_1 = Shape(8, 8, 8, 'Cube', 235, 'Uranium', 92, URANIUM_DENSITY)
+    fuel_rod_2 = Shape(8, 8, 8, 'Cube', 235, 'Uranium', 92, URANIUM_DENSITY)
 
     print(f'{fuel_rod_1} \n')
     print(f'{fuel_rod_2} \n')
@@ -104,16 +114,17 @@ def main():
 
     # Create Grid
     grid = np.zeros((BOX_LENGTH, BOX_LENGTH, BOX_LENGTH))
+    object_separation = 20
+
+    # Embed fuel rods into the grid
+    grid = place_fuel_rods_in_grid(grid, initial_condition_1, initial_condition_2, object_separation)
+
+    # Set up boundary conditions
     boundary_grid = np.full((BOX_LENGTH, BOX_LENGTH, BOX_LENGTH), False)
     boundary_grid[-1, :, :] = True
     boundary_grid[:, -1, :] = True
     boundary_grid[0, :, :] = True
     boundary_grid[:, 0, :] = True
-
-    object_separation = 30
-
-    # Embed fuel rods into the grid
-    grid = place_fuel_rods_in_grid(grid, initial_condition_1, initial_condition_2, object_separation)
 
 
     # Plot the fuel rod starting positions
@@ -126,7 +137,7 @@ def main():
     if np.isnan(result).any():
         print(f'The reaction went super critical and an overflow occurred. Stopping the simulation.')
         exit()
-
+        
     # Calculate density
     for i in range(0, num_timesteps):
         total_density[i] = np.sum(result[:, :, :, i]) / result.size
@@ -138,28 +149,6 @@ def main():
     plt.plot(time, total_density)
     plt.show()
 
-    def plot_diffusion(time_step):
-        """Plot a 2D slice of the 3D diffusion result at a specific time step."""
-        plt.figure(figsize=(8, 6))
-        plt.imshow(
-            np.transpose(result[:, BOX_LENGTH // 2, :, time_step]),
-            cmap='coolwarm',
-            origin='lower',
-            vmin=0.0
-        )
-        plt.contour(
-            np.transpose(result[:, BOX_LENGTH // 2, :, time_step]),
-            levels=30,
-            linewidths=0.5,
-            colors='k',
-            alpha=0.5
-        )
-        plt.colorbar(fraction=0.02)
-        plt.title(f"Diffusion at step {time_step}")
-        plt.xlabel("X-axis")
-        plt.ylabel("Z-axis")
-        plt.show()
-
     # Create the slider widget for time step
     time_slider = IntSlider(
         value=0,  # Initial value
@@ -169,9 +158,16 @@ def main():
         description='Time Step'
     )
 
-    # Use the interact function to link the slider to the plot function
-    interact(plot_diffusion, time_step=time_slider)
+    y_slider = IntSlider(
+        value= result.shape[1] // 2,
+        min=0,
+        max= result.shape[1] - 1,
+        step = 1,
+        description='Y-axis'
+    )
 
+    # Use the interact function to link the slider to the plot function
+    interact(plot_diffusion, time_step=time_slider, y_index=y_slider)
 
 if __name__ == '__main__':
     main()
